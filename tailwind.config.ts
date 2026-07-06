@@ -9,9 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'dp-bg': '#050208',
-        'dp-bg-2': '#0a0612',
-        'dp-surface': '#120a1f',
+        'dp-bg': '#0d0a14',
+        'dp-bg-2': '#15101e',
+        'dp-surface': '#1d1530',
         'dp-gold': '#d4a574',
         'dp-gold-light': '#e8c9a0',
       },

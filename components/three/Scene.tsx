@@ -26,9 +26,11 @@ function SceneContent({
 }: SceneProps) {
   return (
     <>
-      <ambientLight intensity={0.2} />
-      <spotLight position={[5, 10, 5]} angle={0.3} penumbra={1} intensity={1.5} color="#ffffff" />
-      <spotLight position={[-5, 5, -5]} angle={0.4} penumbra={1} intensity={1} color={flavor?.accent ?? '#ff006e'} />
+      <ambientLight intensity={0.6} />
+      <spotLight position={[5, 10, 5]} angle={0.3} penumbra={1} intensity={3} color="#ffffff" />
+      <spotLight position={[-5, 5, -5]} angle={0.4} penumbra={1} intensity={2} color={flavor?.accent ?? '#ff006e'} />
+      <directionalLight position={[0, 5, 5]} intensity={1.5} color="#ffffff" />
+      <pointLight position={[0, 0, 5]} intensity={1.5} color="#ffffff" distance={15} />
 
       <ParticleField color={particleColor ?? flavor?.accent ?? '#d4a574'} count={2000} />
 
@@ -62,14 +64,14 @@ function SceneContent({
 
       <ContactShadows
         position={[0, -2.5, 0]}
-        opacity={0.3}
+        opacity={0.4}
         scale={10}
         blur={2}
         far={5}
-        color={flavor?.accent ?? '#000000'}
+        color="#000000"
       />
 
-      <Environment preset="night" />
+      <Environment preset="sunset" />
 
       <AdaptiveDpr pixelated />
     </>

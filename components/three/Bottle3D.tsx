@@ -2,6 +2,7 @@
 
 import { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
+import { Text } from '@react-three/drei';
 import * as THREE from 'three';
 
 interface Bottle3DProps {
@@ -50,16 +51,16 @@ export default function Bottle3D({
   const glassMaterial = useMemo(
     () =>
       new THREE.MeshPhysicalMaterial({
-        color: 0x88aaff,
+        color: 0xaaccff,
         metalness: 0.1,
         roughness: 0.05,
-        transmission: 0.95,
-        thickness: 0.3,
+        transmission: 0.92,
+        thickness: 0.4,
         ior: 1.45,
         clearcoat: 1,
         clearcoatRoughness: 0.1,
         transparent: true,
-        opacity: 0.35,
+        opacity: 0.5,
       }),
     []
   );
@@ -92,7 +93,13 @@ export default function Bottle3D({
       {/* Cap */}
       <mesh position={[0, bottleHeight / 2 + 1.0, 0]}>
         <cylinderGeometry args={[0.24, 0.24, 0.25, 32]} />
-        <meshStandardMaterial color="#1a1a2e" metalness={0.8} roughness={0.3} />
+        <meshStandardMaterial color="#2a1a3e" metalness={0.8} roughness={0.3} />
+      </mesh>
+
+      {/* Cap top accent */}
+      <mesh position={[0, bottleHeight / 2 + 1.14, 0]}>
+        <cylinderGeometry args={[0.24, 0.24, 0.04, 32]} />
+        <meshStandardMaterial color="#d4a574" metalness={0.9} roughness={0.15} emissive="#d4a574" emissiveIntensity={0.2} />
       </mesh>
 
       {/* Liquid inside */}
@@ -101,30 +108,93 @@ export default function Bottle3D({
         <meshStandardMaterial
           color={fromColor}
           emissive={fromColor}
-          emissiveIntensity={0.4}
+          emissiveIntensity={0.6}
           metalness={0.1}
           roughness={0.2}
           transparent
-          opacity={0.9}
+          opacity={0.92}
         />
       </mesh>
 
-      {/* Label */}
+      {/* Label background - brighter */}
       <mesh position={[0, -0.2, 0.561]}>
-        <planeGeometry args={[0.7, 1.0]} />
-        <meshStandardMaterial color="#0a0612" metalness={0.3} roughness={0.6} />
+        <planeGeometry args={[0.72, 1.05]} />
+        <meshStandardMaterial color="#1a1028" metalness={0.4} roughness={0.5} />
       </mesh>
 
-      {/* Label gold accent */}
-      <mesh position={[0, 0.2, 0.562]}>
-        <planeGeometry args={[0.5, 0.08]} />
+      {/* Label border */}
+      <mesh position={[0, -0.2, 0.562]}>
+        <planeGeometry args={[0.74, 1.07]} />
+        <meshBasicMaterial color="#d4a574" transparent opacity={0.4} />
+      </mesh>
+
+      {/* DON PEPER text on label */}
+      <Text
+        position={[0, 0.12, 0.57]}
+        fontSize={0.11}
+        color="#d4a574"
+        anchorX="center"
+        anchorY="middle"
+        outlineWidth={0.004}
+        outlineColor="#000000"
+        letterSpacing={0.05}
+        fontWeight="bold"
+      >
+        DON PEPER
+      </Text>
+
+      {/* Gold divider line under brand name */}
+      <mesh position={[0, 0.0, 0.573]}>
+        <planeGeometry args={[0.5, 0.015]} />
         <meshStandardMaterial
           color="#d4a574"
           emissive="#d4a574"
-          emissiveIntensity={0.3}
+          emissiveIntensity={0.4}
           metalness={0.8}
           roughness={0.2}
         />
+      </mesh>
+
+      {/* "Rhum Infusé" subtitle */}
+      <Text
+        position={[0, -0.1, 0.57]}
+        fontSize={0.045}
+        color="#ffffff"
+        anchorX="center"
+        anchorY="middle"
+        outlineWidth={0.002}
+        outlineColor="#000000"
+        letterSpacing={0.15}
+      >
+        RHUM INFUSE
+      </Text>
+
+      {/* Flavor name on label */}
+      <Text
+        position={[0, -0.28, 0.57]}
+        fontSize={0.06}
+        color={colorFrom}
+        anchorX="center"
+        anchorY="middle"
+        outlineWidth={0.002}
+        outlineColor="#000000"
+        letterSpacing={0.08}
+      >
+        ARTISANAL
+      </Text>
+
+      {/* Small badge dots on label */}
+      <mesh position={[-0.2, -0.45, 0.573]}>
+        <circleGeometry args={[0.02, 16]} />
+        <meshBasicMaterial color={colorFrom} />
+      </mesh>
+      <mesh position={[0, -0.45, 0.573]}>
+        <circleGeometry args={[0.02, 16]} />
+        <meshBasicMaterial color="#d4a574" />
+      </mesh>
+      <mesh position={[0.2, -0.45, 0.573]}>
+        <circleGeometry args={[0.02, 16]} />
+        <meshBasicMaterial color={colorTo} />
       </mesh>
 
       {/* Glow ring at bottom */}
@@ -133,15 +203,16 @@ export default function Bottle3D({
         <meshBasicMaterial
           color={colorFrom}
           transparent
-          opacity={0.15}
+          opacity={0.25}
           side={THREE.DoubleSide}
           blending={THREE.AdditiveBlending}
         />
       </mesh>
 
-      {/* Point light for glow */}
-      <pointLight position={[0, 0, 2]} color={colorFrom} intensity={2} distance={8} />
-      <pointLight position={[0, -1, 0]} color={colorTo} intensity={1.5} distance={5} />
+      {/* Point lights for glow - boosted intensity */}
+      <pointLight position={[0, 0, 2]} color={colorFrom} intensity={3} distance={10} />
+      <pointLight position={[0, -1, 0]} color={colorTo} intensity={2.5} distance={6} />
+      <pointLight position={[0, 2, 3]} color="#ffffff" intensity={1.5} distance={8} />
     </group>
   );
 }

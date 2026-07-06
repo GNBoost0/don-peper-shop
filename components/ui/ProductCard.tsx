@@ -28,7 +28,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
         <div
           className="relative overflow-hidden rounded-2xl border border-white/10 backdrop-blur-md transition-all duration-500 hover:border-white/20 hover:shadow-2xl"
           style={{
-            background: `linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(0,0,0,0.3) 100%)`,
+            background: `linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.2) 100%)`,
           }}
         >
           {/* Glow effect on hover */}

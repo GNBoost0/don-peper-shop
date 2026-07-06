@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  background: #050208;
+  background: linear-gradient(180deg, #0d0a14 0%, #15101e 50%, #0d0a14 100%);
   color: #ffffff;
   font-family: var(--font-body);
   overflow-x: hidden;
@@ -30,7 +30,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #050208;
+  background: #15101e;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -50,10 +50,10 @@ body {
 
 /* Glassmorphism utility */
 .glass {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* Gradient text utility */
