@@ -40,12 +40,12 @@ export default function HomePage() {
             transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="text-center"
           >
-            <p className="text-xs md:text-sm tracking-[0.5em] text-dp-gold-dark/70 uppercase mb-4">
+            <p className="text-xs md:text-sm tracking-[0.5em] text-dp-gold-dark uppercase mb-4">
               Artisanal · Premium · Infusé
             </p>
             <h1
               className="text-6xl md:text-8xl lg:text-9xl font-display tracking-[0.1em] bg-gradient-to-r from-dp-gold-dark via-dp-gold to-dp-gold-dark bg-clip-text text-transparent"
-              style={{ filter: 'drop-shadow(0 2px 20px rgba(192,140,90,0.2))' }}
+              style={{ filter: 'drop-shadow(0 2px 10px rgba(184,115,46,0.15))' }}
             >
               DON PEPER
             </h1>
@@ -54,7 +54,7 @@ export default function HomePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 1 }}
-              className="mt-6 text-lg md:text-xl text-dp-ink/70 font-light tracking-wide"
+              className="mt-6 text-lg md:text-xl text-dp-ink/80 font-medium tracking-wide"
             >
               Rhum infusé artisanal · Ardennes · depuis 10 ans
             </motion.p>

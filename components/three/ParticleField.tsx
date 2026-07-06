@@ -11,9 +11,9 @@ interface ParticleFieldProps {
 }
 
 export default function ParticleField({
-  count = 3000,
-  color = '#d4a574',
-  size = 0.015,
+  count = 1200,
+  color = '#b8732e',
+  size = 0.04,
 }: ParticleFieldProps) {
   const pointsRef = useRef<THREE.Points>(null);
 
@@ -72,7 +72,7 @@ export default function ParticleField({
         size={size}
         color={color}
         transparent
-        opacity={0.5}
+        opacity={0.7}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.NormalBlending}
