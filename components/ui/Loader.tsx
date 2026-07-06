@@ -47,7 +47,7 @@ export default function Loader() {
               transition={{ ease: 'easeOut' }}
             />
           </div>
-          <p className="mt-3 text-xs text-dp-ink/30 tracking-widest uppercase">
+          <p className="mt-3 text-xs text-dp-ink-muted tracking-widest uppercase">
             Chargement...
           </p>
         </div>

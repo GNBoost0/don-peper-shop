@@ -23,8 +23,8 @@ export default function QuantityPicker({
         className={cn(
           'flex h-8 w-8 items-center justify-center rounded-lg text-lg font-medium transition-all',
           value <= min
-            ? 'text-dp-ink/20 cursor-not-allowed'
-            : 'text-dp-ink/70 hover:text-dp-ink hover:bg-dp-surface/5'
+            ? 'text-dp-ink-muted cursor-not-allowed'
+            : 'text-dp-ink-muted hover:text-dp-ink hover:bg-dp-surface/5'
         )}
       >
         −
@@ -38,8 +38,8 @@ export default function QuantityPicker({
         className={cn(
           'flex h-8 w-8 items-center justify-center rounded-lg text-lg font-medium transition-all',
           value >= max
-            ? 'text-dp-ink/20 cursor-not-allowed'
-            : 'text-dp-ink/70 hover:text-dp-ink hover:bg-dp-surface/5'
+            ? 'text-dp-ink-muted cursor-not-allowed'
+            : 'text-dp-ink-muted hover:text-dp-ink hover:bg-dp-surface/5'
         )}
       >
         +

@@ -100,8 +100,8 @@ export default function AgeGate() {
               >
                 DON PEPER
               </h1>
-              <div className="mt-2 h-px bg-gradient-to-r from-transparent via-dp-gold/50 to-transparent" />
-              <p className="mt-3 text-xs tracking-[0.4em] text-dp-gold/70 uppercase">
+              <div className="mt-2 h-px bg-gradient-to-r from-transparent via-dp-gold-dark to-transparent" />
+              <p className="mt-3 text-xs tracking-[0.4em] text-dp-gold-dark uppercase">
                 L'Art du Rhum Infusé
               </p>
             </motion.div>

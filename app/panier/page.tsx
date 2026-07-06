@@ -58,7 +58,7 @@ export default function CartPage() {
         >
           <div className="text-7xl mb-6 opacity-20">🛒</div>
           <h1 className="text-3xl font-display text-dp-ink mb-3">Votre panier est vide</h1>
-          <p className="text-dp-ink/40 mb-8">Découvrez nos saveurs uniques de rhum infusé</p>
+          <p className="text-dp-ink-muted mb-8">Découvrez nos saveurs uniques de rhum infusé</p>
           <Link href="/boutique">
             <NeonButton>Explorer la boutique</NeonButton>
           </Link>
@@ -99,7 +99,7 @@ export default function CartPage() {
                   }}
                 >
                   <div className="absolute top-1 left-1 w-1 h-24 bg-dp-surface/20 rounded-full" />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[6px] text-dp-ink/60 tracking-wider text-center">
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[6px] text-dp-ink-muted tracking-wider text-center">
                     DON<br />PEPER
                   </div>
                 </div>
@@ -108,7 +108,7 @@ export default function CartPage() {
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <h3 className="text-lg font-medium text-dp-ink">{item.flavorName}</h3>
-                      <p className="text-sm text-dp-ink/40">{item.formatLabel} · {item.volume}</p>
+                      <p className="text-sm text-dp-ink-muted">{item.formatLabel} · {item.volume}</p>
                     </div>
                     <p className="text-lg font-semibold text-dp-ink">
                       {formatPrice(item.price * item.quantity)}
@@ -119,14 +119,14 @@ export default function CartPage() {
                     <div className="inline-flex items-center gap-3 rounded-xl border border-dp-gold/15 px-2 py-1">
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                        className="h-7 w-7 flex items-center justify-center rounded-lg text-dp-ink/60 hover:text-dp-ink hover:bg-dp-surface/5 transition-all"
+                        className="h-7 w-7 flex items-center justify-center rounded-lg text-dp-ink-muted hover:text-dp-ink hover:bg-dp-surface/5 transition-all"
                       >
                         −
                       </button>
                       <span className="w-8 text-center text-sm text-dp-ink">{item.quantity}</span>
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        className="h-7 w-7 flex items-center justify-center rounded-lg text-dp-ink/60 hover:text-dp-ink hover:bg-dp-surface/5 transition-all"
+                        className="h-7 w-7 flex items-center justify-center rounded-lg text-dp-ink-muted hover:text-dp-ink hover:bg-dp-surface/5 transition-all"
                       >
                         +
                       </button>
@@ -134,7 +134,7 @@ export default function CartPage() {
 
                     <button
                       onClick={() => removeItem(item.id)}
-                      className="text-sm text-red-400/60 hover:text-red-400 transition-colors"
+                      className="text-sm text-red-700 hover:text-red-700 transition-colors"
                     >
                       Retirer
                     </button>
@@ -145,7 +145,7 @@ export default function CartPage() {
 
             <button
               onClick={clearCart}
-              className="text-sm text-dp-ink/30 hover:text-dp-ink/60 transition-colors"
+              className="text-sm text-dp-ink-muted hover:text-dp-ink-muted transition-colors"
             >
               Vider le panier
             </button>
@@ -157,7 +157,7 @@ export default function CartPage() {
               <h2 className="text-lg font-display text-dp-ink mb-4">Récapitulatif</h2>
 
               <div>
-                <label className="text-xs text-dp-ink/40 mb-2 block uppercase tracking-wider">
+                <label className="text-xs text-dp-ink-muted mb-2 block uppercase tracking-wider">
                   Pays de livraison
                 </label>
                 <select
@@ -172,11 +172,11 @@ export default function CartPage() {
               </div>
 
               <div className="space-y-2 text-sm border-t border-dp-gold/8 pt-4">
-                <div className="flex justify-between text-dp-ink/50">
+                <div className="flex justify-between text-dp-ink">
                   <span>Sous-total</span>
                   <span>{formatPrice(subtotal)}</span>
                 </div>
-                <div className="flex justify-between text-dp-ink/50">
+                <div className="flex justify-between text-dp-ink">
                   <span>Livraison</span>
                   <span>{shippingCost === 0 ? 'Offerte ✨' : formatPrice(shippingCost)}</span>
                 </div>
@@ -191,7 +191,7 @@ export default function CartPage() {
                 {loading ? 'Redirection...' : 'Commander'}
               </NeonButton>
 
-              <p className="text-center text-xs text-dp-ink/30">
+              <p className="text-center text-xs text-dp-ink-muted">
                 Paiement sécurisé via Stripe
               </p>
             </div>

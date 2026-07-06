@@ -35,24 +35,21 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-          scrolled
-            ? 'py-3 px-4'
-            : 'py-5 px-4'
+          scrolled ? 'py-3 px-4' : 'py-5 px-4'
         )}
       >
         <div
           className={cn(
             'mx-auto max-w-7xl flex items-center justify-between rounded-2xl px-6 py-3 transition-all duration-500',
             scrolled
-              ? 'bg-dp-surface/80 backdrop-blur-xl border border-dp-gold/15 shadow-lg shadow-black/5'
-              : 'bg-transparent border border-transparent'
+              ? 'bg-dp-surface/90 backdrop-blur-xl border border-dp-gold/20 shadow-lg shadow-dp-gold/5'
+              : 'bg-dp-surface/40 backdrop-blur-md border border-dp-gold/10'
           )}
         >
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-2">
             <span
-              className="text-2xl font-display tracking-[0.15em] bg-gradient-to-r from-dp-gold via-dp-gold-light to-dp-gold bg-clip-text text-transparent transition-all group-hover:tracking-[0.2em]"
-              style={{ filter: 'drop-shadow(0 0 10px rgba(212,165,116,0.3))' }}
+              className="text-2xl font-display tracking-[0.15em] text-dp-gold-dark group-hover:tracking-[0.2em] transition-all font-bold"
             >
               DON PEPER
             </span>
@@ -67,15 +64,15 @@ export default function Navbar() {
                 className={cn(
                   'relative px-4 py-2 text-sm font-medium transition-colors rounded-lg',
                   pathname === link.href
-                    ? 'text-dp-gold'
-                    : 'text-dp-ink/60 hover:text-dp-ink'
+                    ? 'text-dp-gold-dark'
+                    : 'text-dp-ink hover:text-dp-gold-dark'
                 )}
               >
                 {link.label}
                 {pathname === link.href && (
                   <motion.div
                     layoutId="navbar-active"
-                    className="absolute inset-0 rounded-lg bg-dp-gold/10 border border-dp-gold/20"
+                    className="absolute inset-0 rounded-lg bg-dp-gold/10 border border-dp-gold/25"
                   />
                 )}
               </Link>
@@ -87,14 +84,14 @@ export default function Navbar() {
             {/* Cart button */}
             <button
               onClick={toggleCart}
-              className="relative rounded-xl p-2.5 text-dp-ink/70 hover:text-dp-ink hover:bg-dp-surface/5 transition-all"
+              className="relative rounded-xl p-2.5 text-dp-ink hover:text-dp-gold-dark hover:bg-dp-gold/10 transition-all"
               aria-label="Panier"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
               </svg>
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-dp-gold text-xs font-bold text-dp-bg">
+                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-dp-gold-dark text-xs font-bold text-dp-surface">
                   {totalItems}
                 </span>
               )}
@@ -103,7 +100,7 @@ export default function Navbar() {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden rounded-xl p-2.5 text-dp-ink/70 hover:text-dp-ink hover:bg-dp-surface/5 transition-all"
+              className="md:hidden rounded-xl p-2.5 text-dp-ink hover:text-dp-gold-dark hover:bg-dp-gold/10 transition-all"
               aria-label="Menu"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -125,7 +122,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden mt-2 mx-auto max-w-7xl overflow-hidden rounded-2xl bg-dp-surface/90 backdrop-blur-xl border border-dp-gold/15"
+              className="md:hidden mt-2 mx-auto max-w-7xl overflow-hidden rounded-2xl bg-dp-surface/95 backdrop-blur-xl border border-dp-gold/20"
             >
               {NAV_LINKS.map((link) => (
                 <Link
@@ -133,8 +130,8 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className={cn(
-                    'block px-6 py-3 text-sm font-medium border-b border-dp-ink/5 last:border-0',
-                    pathname === link.href ? 'text-dp-gold' : 'text-dp-ink/60'
+                    'block px-6 py-3 text-sm font-medium border-b border-dp-gold/10 last:border-0',
+                    pathname === link.href ? 'text-dp-gold-dark' : 'text-dp-ink'
                   )}
                 >
                   {link.label}

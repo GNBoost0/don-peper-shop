@@ -14,7 +14,7 @@ export default function ShippingCalculator({ country, onCountryChange }: Shippin
 
   return (
     <div className="rounded-xl border border-dp-ink/10 bg-dp-surface/[0.02] p-4">
-      <label className="text-xs text-dp-ink/40 mb-2 block uppercase tracking-wider">
+      <label className="text-xs text-dp-ink-muted mb-2 block uppercase tracking-wider">
         Pays de livraison
       </label>
       <select
@@ -30,18 +30,18 @@ export default function ShippingCalculator({ country, onCountryChange }: Shippin
       </select>
 
       <div className="mt-3 flex items-center justify-between">
-        <span className="text-sm text-dp-ink/50">Frais de livraison</span>
+        <span className="text-sm text-dp-ink">Frais de livraison</span>
         {deliverable ? (
-          <span className={`text-sm font-medium ${cost === 0 ? 'text-green-400' : 'text-dp-ink/80'}`}>
+          <span className={`text-sm font-medium ${cost === 0 ? 'text-green-700' : 'text-dp-ink'}`}>
             {cost === 0 ? 'Offerte' : formatPrice(cost)}
           </span>
         ) : (
-          <span className="text-sm text-red-400">Non livrable</span>
+          <span className="text-sm text-red-700">Non livrable</span>
         )}
       </div>
 
       {!deliverable && (
-        <p className="mt-2 text-xs text-red-400/70">
+        <p className="mt-2 text-xs text-red-800">
           Désolé, nous ne livrons pas dans ce pays pour le moment.
         </p>
       )}

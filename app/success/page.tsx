@@ -46,15 +46,15 @@ function SuccessContent() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <p className="text-xs tracking-[0.4em] text-dp-gold/50 uppercase mb-3">Commande confirmée</p>
+          <p className="text-xs tracking-[0.4em] text-dp-gold-dark uppercase mb-3">Commande confirmée</p>
           <h1 className="text-4xl font-display text-dp-ink mb-4">
             Merci pour votre commande !
           </h1>
-          <p className="text-dp-ink/50 leading-relaxed mb-2">
+          <p className="text-dp-ink leading-relaxed mb-2">
             Votre paiement a été traité avec succès. Vous recevrez un email de confirmation avec les détails de votre commande.
           </p>
           {sessionId && (
-            <p className="text-xs text-dp-ink/30 mt-4">
+            <p className="text-xs text-dp-ink-muted mt-4">
               N° de session : {sessionId.slice(0, 20)}...
             </p>
           )}

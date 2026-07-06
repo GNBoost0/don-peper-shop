@@ -90,7 +90,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
                 {/* Label */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-20 bg-gradient-to-b from-[#1f1530] to-[#15102a] rounded-sm flex flex-col items-center justify-center">
                   <div className="h-px w-10 bg-dp-gold/80 mb-1" />
-                  <div className="text-[7px] font-display tracking-widest text-dp-gold-light text-center font-bold">
+                  <div className="text-[7px] font-display tracking-widest text-dp-gold text-center font-bold">
                     DON<br />PEPER
                   </div>
                   <div className="h-px w-10 bg-dp-gold/80 mt-1" />
@@ -116,20 +116,20 @@ export default function ProductCard({ product, index }: ProductCardProps) {
                 <h3 className="text-lg font-display text-dp-ink">
                   {flavor.name}
                 </h3>
-                <p className="text-xs text-dp-ink/40 tracking-wide">{flavor.nameEn}</p>
+                <p className="text-xs text-dp-ink-muted tracking-wide">{flavor.nameEn}</p>
               </div>
               <span className="text-2xl" role="img" aria-label={flavor.nameEn}>
                 {flavor.fruitEmoji}
               </span>
             </div>
 
-            <p className="text-xs text-dp-ink/40 line-clamp-2 mb-3 leading-relaxed">
+            <p className="text-xs text-dp-ink-muted line-clamp-2 mb-3 leading-relaxed">
               {flavor.description}
             </p>
 
             <div className="flex items-end justify-between">
               <div>
-                <span className="text-xs text-dp-ink/40">À partir de</span>
+                <span className="text-xs text-dp-ink-muted">À partir de</span>
                 <p
                   className="text-lg font-semibold bg-gradient-to-r bg-clip-text text-transparent"
                   style={{ backgroundImage: `linear-gradient(135deg, ${flavor.colorFrom}, ${flavor.colorTo})` }}
@@ -138,7 +138,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
                 </p>
               </div>
               <div className="text-right">
-                <span className="text-xs text-dp-ink/30">{formats.length} formats</span>
+                <span className="text-xs text-dp-ink-muted">{formats.length} formats</span>
               </div>
             </div>
           </div>

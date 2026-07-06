@@ -49,12 +49,12 @@ export default function HomePage() {
             >
               DON PEPER
             </h1>
-            <div className="mt-2 mx-auto h-px w-48 bg-gradient-to-r from-transparent via-dp-gold/50 to-transparent" />
+            <div className="mt-2 mx-auto h-px w-48 bg-gradient-to-r from-transparent via-dp-gold-dark to-transparent" />
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 1 }}
-              className="mt-6 text-lg md:text-xl text-dp-ink/80 font-medium tracking-wide"
+              className="mt-6 text-lg md:text-xl text-dp-ink font-medium tracking-wide"
             >
               Rhum infusé artisanal · Ardennes · depuis 10 ans
             </motion.p>
@@ -89,8 +89,8 @@ export default function HomePage() {
             transition={{ duration: 2, repeat: Infinity }}
             className="flex flex-col items-center gap-2"
           >
-            <span className="text-xs text-dp-ink/30 tracking-widest uppercase">Scroll</span>
-            <svg className="h-5 w-5 text-dp-ink/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <span className="text-xs text-dp-ink-muted tracking-widest uppercase">Scroll</span>
+            <svg className="h-5 w-5 text-dp-ink-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
             </svg>
           </motion.div>
@@ -107,11 +107,11 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <p className="text-xs tracking-[0.4em] text-dp-gold/50 uppercase mb-3">Nos Saveurs</p>
+            <p className="text-xs tracking-[0.4em] text-dp-gold-dark uppercase mb-3">Nos Saveurs</p>
             <h2 className="text-4xl md:text-5xl font-display text-dp-ink">
               Une Palette de Goûts
             </h2>
-            <p className="mt-4 text-dp-ink/40 max-w-2xl mx-auto">
+            <p className="mt-4 text-dp-ink-muted max-w-2xl mx-auto">
               Chaque rhum est une création unique, infusée avec des fruits soigneusement sélectionnés.
             </p>
           </motion.div>
@@ -141,7 +141,7 @@ export default function HomePage() {
                     >
                       {product.flavor.name}
                     </h3>
-                    <p className="text-xs text-dp-ink/30 mt-1">Dès {product.formats[0].price}€</p>
+                    <p className="text-xs text-dp-ink-muted mt-1">Dès {product.formats[0].price}€</p>
 
                     <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
@@ -157,7 +157,7 @@ export default function HomePage() {
 
           <div className="text-center mt-12">
             <Link href="/boutique">
-              <button className="text-dp-gold hover:text-dp-gold-light transition-colors text-sm tracking-wider">
+              <button className="text-dp-gold hover:text-dp-gold transition-colors text-sm tracking-wider">
                 Voir toutes les saveurs →
               </button>
             </Link>
@@ -178,19 +178,19 @@ export default function HomePage() {
             <div className="flex justify-center gap-8 md:gap-16 flex-wrap">
               <div>
                 <div className="text-3xl font-display text-dp-gold">100%</div>
-                <p className="text-xs text-dp-ink/40 mt-1 tracking-wider uppercase">Naturel</p>
+                <p className="text-xs text-dp-ink-muted mt-1 tracking-wider uppercase">Naturel</p>
               </div>
               <div>
                 <div className="text-3xl font-display text-dp-gold">3 mois</div>
-                <p className="text-xs text-dp-ink/40 mt-1 tracking-wider uppercase">Infusion</p>
+                <p className="text-xs text-dp-ink-muted mt-1 tracking-wider uppercase">Infusion</p>
               </div>
               <div>
                 <div className="text-3xl font-display text-dp-gold">8</div>
-                <p className="text-xs text-dp-ink/40 mt-1 tracking-wider uppercase">Saveurs</p>
+                <p className="text-xs text-dp-ink-muted mt-1 tracking-wider uppercase">Saveurs</p>
               </div>
               <div>
                 <div className="text-3xl font-display text-dp-gold">0</div>
-                <p className="text-xs text-dp-ink/40 mt-1 tracking-wider uppercase">Colorants</p>
+                <p className="text-xs text-dp-ink-muted mt-1 tracking-wider uppercase">Colorants</p>
               </div>
             </div>
           </motion.div>
