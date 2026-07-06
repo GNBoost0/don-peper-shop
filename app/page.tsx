@@ -7,7 +7,7 @@ import { useRef } from 'react';
 import { PRODUCTS } from '@/lib/products';
 import NeonButton from '@/components/ui/NeonButton';
 
-const Scene = dynamic(() => import('@/components/three/Scene'), { ssr: false });
+const HeroScene = dynamic(() => import('@/components/three/HeroScene'), { ssr: false });
 const FeaturedBottle = dynamic(() => import('@/components/three/CardBottle'), { ssr: false });
 
 export default function HomePage() {
@@ -19,21 +19,22 @@ export default function HomePage() {
 
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
 
   return (
     <motion.main ref={containerRef}>
-      {/* Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden">
-        {/* WebGL Background */}
-        <div className="absolute inset-0">
-          <Scene showBottle={true} particleColor="#d4a574" />
+      {/* Hero Section — WHITE BACKGROUND GUARANTEED */}
+      <section className="relative min-h-screen w-full overflow-hidden bg-white">
+        {/* 3D bottle in a sized container, NOT fullscreen overlay */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="relative w-full max-w-2xl h-[60vh] min-h-[400px]">
+            <HeroScene />
+          </div>
         </div>
 
-        {/* Overlay content */}
+        {/* Text overlay */}
         <motion.div
-          style={{ y: heroY, opacity: heroOpacity, scale: heroScale }}
-          className="relative z-10 flex h-full flex-col items-center justify-center px-4"
+          style={{ y: heroY, opacity: heroOpacity }}
+          className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 pointer-events-none"
         >
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -65,7 +66,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="mt-12 flex flex-col sm:flex-row gap-4"
+            className="mt-12 flex flex-col sm:flex-row gap-4 pointer-events-auto"
           >
             <Link href="/boutique">
               <NeonButton className="w-full sm:w-auto">
@@ -73,7 +74,7 @@ export default function HomePage() {
               </NeonButton>
             </Link>
             <Link href="/a-propos">
-              <button className="rounded-xl border border-dp-ink/20 px-8 py-3.5 font-semibold text-dp-ink hover:border-dp-gold/40 hover:bg-dp-surface transition-all w-full sm:w-auto">
+              <button className="rounded-xl border-2 border-dp-gold/30 px-8 py-3.5 font-semibold text-dp-ink hover:border-dp-gold hover:bg-dp-gold/5 transition-all w-full sm:w-auto">
                 Notre Histoire
               </button>
             </Link>
@@ -99,7 +100,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Flavors */}
-      <section className="relative py-32 px-4">
+      <section className="relative py-24 px-4 bg-white">
         <div className="mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -153,7 +154,7 @@ export default function HomePage() {
 
           <div className="text-center mt-12">
             <Link href="/boutique">
-              <button className="text-dp-gold hover:text-dp-gold transition-colors text-sm tracking-wider">
+              <button className="text-dp-gold-dark hover:text-dp-gold transition-colors text-sm tracking-wider font-medium">
                 Voir toutes les saveurs →
               </button>
             </Link>
@@ -162,14 +163,14 @@ export default function HomePage() {
       </section>
 
       {/* Quality banner */}
-      <section className="relative py-32 px-4">
+      <section className="relative py-24 px-4 bg-white">
         <div className="mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="glass rounded-3xl p-12 md:p-16 text-center"
+            className="rounded-3xl p-12 md:p-16 text-center border border-black/8 bg-gray-50"
           >
             <div className="flex justify-center gap-8 md:gap-16 flex-wrap">
               <div>

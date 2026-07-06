@@ -16,22 +16,17 @@ export default function CardBottle({ flavor }: CardBottleProps) {
     <Canvas
       camera={{ position: [0, 0, 6.5], fov: 45 }}
       dpr={[1, 1.5]}
-      gl={{ antialias: true, alpha: false, powerPreference: 'low-power' }}
-      onCreated={({ scene }) => {
-        scene.background = new THREE.Color('#ffffff');
-      }}
-      style={{ width: '100%', height: '100%' }}
+      gl={{ antialias: true, alpha: true, powerPreference: 'low-power' }}
+      style={{ width: '100%', height: '100%', background: 'transparent' }}
     >
       <Suspense fallback={null}>
-        {/* Clean white lighting */}
-        <color attach="background" args={['#ffffff']} />
+        {/* No background color — transparent, CSS white shows through */}
         <ambientLight intensity={1.2} />
         <hemisphereLight args={['#ffffff', '#f0f0f0', 0.8]} />
         <spotLight position={[5, 8, 5]} angle={0.35} penumbra={1} intensity={3.5} color="#ffffff" />
         <spotLight position={[-5, 5, 3]} angle={0.4} penumbra={1} intensity={2.5} color={flavor.accent} />
         <directionalLight position={[0, 5, 5]} intensity={2.5} color="#ffffff" />
 
-        {/* The actual 3D bottle — same quality as product page */}
         <Bottle3D
           colorFrom={flavor.colorFrom}
           colorTo={flavor.colorTo}
@@ -42,7 +37,7 @@ export default function CardBottle({ flavor }: CardBottleProps) {
 
         <ContactShadows
           position={[0, -2.3, 0]}
-          opacity={0.08}
+          opacity={0.06}
           scale={6}
           blur={2.5}
           far={4}

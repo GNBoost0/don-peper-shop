@@ -42,8 +42,8 @@ export default function Navbar() {
           className={cn(
             'mx-auto max-w-7xl flex items-center justify-between rounded-2xl px-6 py-3 transition-all duration-500',
             scrolled
-              ? 'bg-dp-surface backdrop-blur-xl border border-dp-gold/20 shadow-lg shadow-dp-gold/5'
-              : 'bg-dp-surface backdrop-blur-md border border-dp-gold/10'
+              ? 'bg-white/95 backdrop-blur-xl border border-black/8 shadow-md shadow-black/5'
+              : 'bg-white/80 backdrop-blur-md border border-black/5'
           )}
         >
           {/* Logo */}

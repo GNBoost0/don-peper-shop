@@ -27,10 +27,7 @@ function SceneContent({
 }: SceneProps) {
   return (
     <>
-      {/* Pure white background */}
-      <color attach="background" args={['#ffffff']} />
-
-      {/* Bright white lighting */}
+      {/* No background color — transparent canvas */}
       <ambientLight intensity={1.2} />
       <hemisphereLight args={['#ffffff', '#f0f0f0', 0.8]} />
       <spotLight position={[5, 10, 5]} angle={0.3} penumbra={1} intensity={4} color="#ffffff" />
@@ -72,7 +69,7 @@ function SceneContent({
 
       <ContactShadows
         position={[0, -2.5, 0]}
-        opacity={0.1}
+        opacity={0.08}
         scale={10}
         blur={2}
         far={5}
@@ -98,12 +95,8 @@ export default function Scene({
     <Canvas
       camera={{ position: [0, 0, 7], fov: 45 }}
       dpr={[1, 2]}
-      gl={{ antialias: true, alpha: false, powerPreference: 'high-performance' }}
-      onCreated={({ scene }) => {
-        scene.background = new THREE.Color('#ffffff');
-        scene.fog = new THREE.Fog('#ffffff', 18, 35);
-      }}
-      style={{ width: '100%', height: '100%' }}
+      gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
+      style={{ width: '100%', height: '100%', background: 'transparent' }}
     >
       <Suspense fallback={null}>
         <SceneContent
