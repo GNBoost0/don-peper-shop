@@ -51,7 +51,7 @@ export default function AgeGate() {
           exit={{ opacity: 0, transition: { duration: 0.6 } }}
           className="fixed inset-0 z-[9999] flex items-center justify-center"
           style={{
-            background: 'radial-gradient(ellipse at center, #faf6f0 0%, #f0e8dc 100%)',
+            background: 'radial-gradient(ellipse at center, #ffffff 0%, #f8f9fa 100%)',
           }}
         >
           {/* Floating particles */}

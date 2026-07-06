@@ -42,8 +42,8 @@ export default function Navbar() {
           className={cn(
             'mx-auto max-w-7xl flex items-center justify-between rounded-2xl px-6 py-3 transition-all duration-500',
             scrolled
-              ? 'bg-dp-surface/90 backdrop-blur-xl border border-dp-gold/20 shadow-lg shadow-dp-gold/5'
-              : 'bg-dp-surface/40 backdrop-blur-md border border-dp-gold/10'
+              ? 'bg-dp-surface backdrop-blur-xl border border-dp-gold/20 shadow-lg shadow-dp-gold/5'
+              : 'bg-dp-surface backdrop-blur-md border border-dp-gold/10'
           )}
         >
           {/* Logo */}
@@ -122,7 +122,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden mt-2 mx-auto max-w-7xl overflow-hidden rounded-2xl bg-dp-surface/95 backdrop-blur-xl border border-dp-gold/20"
+              className="md:hidden mt-2 mx-auto max-w-7xl overflow-hidden rounded-2xl bg-dp-surface backdrop-blur-xl border border-dp-gold/20"
             >
               {NAV_LINKS.map((link) => (
                 <Link

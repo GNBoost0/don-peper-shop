@@ -119,14 +119,14 @@ export default function CartPage() {
                     <div className="inline-flex items-center gap-3 rounded-xl border border-dp-gold/15 px-2 py-1">
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                        className="h-7 w-7 flex items-center justify-center rounded-lg text-dp-ink-muted hover:text-dp-ink hover:bg-dp-surface/5 transition-all"
+                        className="h-7 w-7 flex items-center justify-center rounded-lg text-dp-ink-muted hover:text-dp-ink hover:bg-dp-bg-2 transition-all"
                       >
                         −
                       </button>
                       <span className="w-8 text-center text-sm text-dp-ink">{item.quantity}</span>
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        className="h-7 w-7 flex items-center justify-center rounded-lg text-dp-ink-muted hover:text-dp-ink hover:bg-dp-surface/5 transition-all"
+                        className="h-7 w-7 flex items-center justify-center rounded-lg text-dp-ink-muted hover:text-dp-ink hover:bg-dp-bg-2 transition-all"
                       >
                         +
                       </button>

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
-    <footer className="relative mt-32 border-t border-dp-gold/20 bg-dp-bg-2/90 backdrop-blur-sm">
+    <footer className="relative mt-32 border-t border-black/8 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}

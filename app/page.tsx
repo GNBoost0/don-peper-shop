@@ -72,7 +72,7 @@ export default function HomePage() {
               </NeonButton>
             </Link>
             <Link href="/a-propos">
-              <button className="rounded-xl border border-dp-ink/20 px-8 py-3.5 font-semibold text-dp-ink hover:border-dp-gold/40 hover:bg-dp-surface/50 transition-all w-full sm:w-auto">
+              <button className="rounded-xl border border-dp-ink/20 px-8 py-3.5 font-semibold text-dp-ink hover:border-dp-gold/40 hover:bg-dp-surface transition-all w-full sm:w-auto">
                 Notre Histoire
               </button>
             </Link>
@@ -127,7 +127,7 @@ export default function HomePage() {
               >
                 <Link href={`/produit/${product.slug}`}>
                   <div
-                    className="group relative overflow-hidden rounded-2xl border border-dp-gold/15 p-6 text-center transition-all hover:border-dp-gold/30 hover:shadow-xl bg-dp-surface/70 h-full"
+                    className="group relative overflow-hidden rounded-2xl border border-dp-gold/15 p-6 text-center transition-all hover:border-dp-gold/30 hover:shadow-xl bg-dp-surface h-full"
                     style={{
                       background: `linear-gradient(135deg, ${product.flavor.glow}, transparent)`,
                     }}

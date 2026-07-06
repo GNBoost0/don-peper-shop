@@ -24,7 +24,7 @@ export default function QuantityPicker({
           'flex h-8 w-8 items-center justify-center rounded-lg text-lg font-medium transition-all',
           value <= min
             ? 'text-dp-ink-muted cursor-not-allowed'
-            : 'text-dp-ink-muted hover:text-dp-ink hover:bg-dp-surface/5'
+            : 'text-dp-ink-muted hover:text-dp-ink hover:bg-dp-bg-2'
         )}
       >
         −
@@ -39,7 +39,7 @@ export default function QuantityPicker({
           'flex h-8 w-8 items-center justify-center rounded-lg text-lg font-medium transition-all',
           value >= max
             ? 'text-dp-ink-muted cursor-not-allowed'
-            : 'text-dp-ink-muted hover:text-dp-ink hover:bg-dp-surface/5'
+            : 'text-dp-ink-muted hover:text-dp-ink hover:bg-dp-bg-2'
         )}
       >
         +

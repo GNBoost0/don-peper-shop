@@ -26,7 +26,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
     >
       <Link href={`/produit/${product.slug}`}>
         <div
-          className="relative overflow-hidden rounded-2xl border border-dp-gold/15 backdrop-blur-md transition-all duration-500 hover:border-dp-gold/30 hover:shadow-2xl bg-dp-surface/70"
+          className="relative overflow-hidden rounded-2xl border border-dp-gold/15 backdrop-blur-md transition-all duration-500 hover:border-dp-gold/30 hover:shadow-2xl bg-dp-surface"
         >
           {/* Glow effect on hover */}
           <div

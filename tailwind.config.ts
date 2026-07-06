@@ -9,16 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'dp-bg': '#fff8f0',
-        'dp-bg-2': '#ffeede',
+        'dp-bg': '#ffffff',
+        'dp-bg-2': '#f8f9fa',
         'dp-surface': '#ffffff',
-        'dp-ink': '#3d2b1f',
-        'dp-ink-muted': '#8a7460',
+        'dp-ink': '#2a1f15',
+        'dp-ink-muted': '#6b5d4f',
         'dp-gold': '#b8732e',
-        'dp-gold-light': '#d9974e',
+        'dp-gold-light': '#d4a574',
         'dp-gold-dark': '#8f5818',
-        'dp-peach': '#ffd9c4',
-        'dp-cream': '#fff5e6',
+        'dp-peach': '#fff0e6',
+        'dp-cream': '#fafafa',
       },
       fontFamily: {
         display: ['var(--font-display)', 'serif'],

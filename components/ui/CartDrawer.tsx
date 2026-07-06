@@ -112,7 +112,7 @@ export default function CartDrawer() {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: 20 }}
-                      className="flex gap-3 rounded-xl border border-dp-gold/15 bg-dp-bg/60 p-3"
+                      className="flex gap-3 rounded-xl border border-dp-gold/15 bg-dp-bg p-3"
                     >
                       {/* Mini bottle */}
                       <div
