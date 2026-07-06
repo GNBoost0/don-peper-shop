@@ -15,93 +15,94 @@ interface Bottle3DProps {
 
 function createLabelTexture(colorFrom: string, colorTo: string, flavorName: string) {
   const canvas = document.createElement('canvas');
-  canvas.width = 512;
-  canvas.height = 768;
+  canvas.width = 1024;
+  canvas.height = 1024;
   const ctx = canvas.getContext('2d')!;
 
-  // Background — warm dark label
-  const bgGrad = ctx.createLinearGradient(0, 0, 0, 768);
-  bgGrad.addColorStop(0, '#1f1530');
-  bgGrad.addColorStop(0.5, '#15102a');
-  bgGrad.addColorStop(1, '#1f1530');
+  // Background — premium dark cream label (visible on light scene)
+  const bgGrad = ctx.createLinearGradient(0, 0, 0, 1024);
+  bgGrad.addColorStop(0, '#2b1a0e');
+  bgGrad.addColorStop(0.15, '#3d2614');
+  bgGrad.addColorStop(0.5, '#2b1a0e');
+  bgGrad.addColorStop(0.85, '#3d2614');
+  bgGrad.addColorStop(1, '#2b1a0e');
   ctx.fillStyle = bgGrad;
-  ctx.fillRect(0, 0, 512, 768);
+  ctx.fillRect(0, 0, 1024, 1024);
 
-  // Gold double border
-  ctx.strokeStyle = '#c08c5a';
-  ctx.lineWidth = 4;
-  ctx.strokeRect(16, 16, 480, 736);
-  ctx.strokeStyle = 'rgba(192, 140, 90, 0.4)';
-  ctx.lineWidth = 1.5;
-  ctx.strokeRect(28, 28, 456, 712);
+  // Gold thick double border
+  ctx.strokeStyle = '#e8b06a';
+  ctx.lineWidth = 8;
+  ctx.strokeRect(24, 24, 976, 976);
+  ctx.strokeStyle = 'rgba(232, 176, 106, 0.4)';
+  ctx.lineWidth = 3;
+  ctx.strokeRect(48, 48, 928, 928);
 
-  // DON PEPER — main brand
-  ctx.fillStyle = '#d4a574';
-  ctx.font = 'bold 68px "Cormorant Garamond", "Playfair Display", Georgia, serif';
+  // DON PEPER — massive brand text
+  ctx.fillStyle = '#f0c884';
+  ctx.font = 'bold 110px "Cormorant Garamond", "Playfair Display", Georgia, serif';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText('DON PEPER', 256, 220);
+  ctx.fillText('DON PEPER', 512, 300);
 
-  // Gold divider line
-  const lineGrad = ctx.createLinearGradient(100, 0, 412, 0);
+  // Gold divider line under brand
+  const lineGrad = ctx.createLinearGradient(150, 0, 874, 0);
   lineGrad.addColorStop(0, 'transparent');
-  lineGrad.addColorStop(0.5, '#c08c5a');
+  lineGrad.addColorStop(0.5, '#e8b06a');
   lineGrad.addColorStop(1, 'transparent');
   ctx.strokeStyle = lineGrad;
-  ctx.lineWidth = 2;
+  ctx.lineWidth = 4;
   ctx.beginPath();
-  ctx.moveTo(100, 280);
-  ctx.lineTo(412, 280);
+  ctx.moveTo(150, 380);
+  ctx.lineTo(874, 380);
   ctx.stroke();
 
   // RHUM INFUSÉ
-  ctx.fillStyle = '#f0e8dc';
-  ctx.font = '600 26px "Inter", system-ui, sans-serif';
-  ctx.letterSpacing = '4px';
-  ctx.fillText('RHUM  INFUSÉ', 256, 330);
+  ctx.fillStyle = '#fff5e6';
+  ctx.font = '600 44px "Inter", system-ui, sans-serif';
+  ctx.fillText('RHUM  INFUSÉ', 512, 440);
 
-  // Spacer
-
-  // Flavor name in color
+  // Flavor name in bright color
   ctx.fillStyle = colorFrom;
-  ctx.font = 'italic 36px "Cormorant Garamond", serif';
-  ctx.fillText(flavorName, 256, 420);
+  ctx.font = 'italic 60px "Cormorant Garamond", serif';
+  ctx.fillText(flavorName, 512, 560);
 
   // Decorative dots
   ctx.fillStyle = colorFrom;
   ctx.beginPath();
-  ctx.arc(180, 500, 7, 0, Math.PI * 2);
+  ctx.arc(380, 660, 12, 0, Math.PI * 2);
   ctx.fill();
-  ctx.fillStyle = '#c08c5a';
+  ctx.fillStyle = '#e8b06a';
   ctx.beginPath();
-  ctx.arc(256, 500, 7, 0, Math.PI * 2);
+  ctx.arc(512, 660, 12, 0, Math.PI * 2);
   ctx.fill();
   ctx.fillStyle = colorTo;
   ctx.beginPath();
-  ctx.arc(332, 500, 7, 0, Math.PI * 2);
+  ctx.arc(644, 660, 12, 0, Math.PI * 2);
   ctx.fill();
 
   // Bottom text
-  ctx.fillStyle = '#8a7a6a';
-  ctx.font = '18px "Inter", sans-serif';
-  ctx.fillText('ARDENNES · FRANCE', 256, 580);
-  ctx.font = '14px "Inter", sans-serif';
-  ctx.fillStyle = '#6b5d4f';
-  ctx.fillText('Fait à la main · Édition limitée', 256, 610);
+  ctx.fillStyle = '#c4a070';
+  ctx.font = '600 30px "Inter", sans-serif';
+  ctx.fillText('ARDENNES · FRANCE', 512, 760);
 
-  // Small gold badge
-  ctx.strokeStyle = '#c08c5a';
-  ctx.lineWidth = 1.5;
+  ctx.font = '24px "Inter", sans-serif';
+  ctx.fillStyle = '#a08866';
+  ctx.fillText('Fait à la main · Édition limitée', 512, 800);
+
+  // Small gold badge circle
+  ctx.strokeStyle = '#e8b06a';
+  ctx.lineWidth = 3;
   ctx.beginPath();
-  ctx.arc(256, 670, 30, 0, Math.PI * 2);
+  ctx.arc(512, 890, 44, 0, Math.PI * 2);
   ctx.stroke();
-  ctx.fillStyle = '#c08c5a';
-  ctx.font = 'bold 14px serif';
-  ctx.fillText('40°', 256, 672);
+  ctx.fillStyle = '#e8b06a';
+  ctx.font = 'bold 26px serif';
+  ctx.fillText('40°', 512, 893);
 
   const texture = new THREE.CanvasTexture(canvas);
   texture.needsUpdate = true;
   texture.anisotropy = 16;
+  texture.colorSpace = THREE.SRGBColorSpace;
   return texture;
 }
 
@@ -124,19 +125,18 @@ export default function Bottle3D({
     [colorFrom, colorTo, flavorName]
   );
 
-  // Curved label geometry — wraps ~120° around the bottle
+  // Curved label — wraps ~200° around the bottle for max visibility
   const labelGeometry = useMemo(() => {
-    const geo = new THREE.CylinderGeometry(0.562, 0.562, 1.1, 64, 1, true, -Math.PI * 0.33, Math.PI * 0.66);
+    const geo = new THREE.CylinderGeometry(0.565, 0.565, 1.4, 96, 1, true, -Math.PI * 0.55, Math.PI * 1.1);
     return geo;
   }, []);
 
+  // MeshBasicMaterial = NOT affected by scene lighting, always fully visible
   const labelMaterial = useMemo(() => {
-    return new THREE.MeshStandardMaterial({
+    return new THREE.MeshBasicMaterial({
       map: labelTexture,
-      transparent: true,
-      roughness: 0.6,
-      metalness: 0.2,
       side: THREE.DoubleSide,
+      toneMapped: false,
     });
   }, [labelTexture]);
 
@@ -165,16 +165,16 @@ export default function Bottle3D({
   const glassMaterial = useMemo(
     () =>
       new THREE.MeshPhysicalMaterial({
-        color: 0xddddff,
+        color: 0xeef0ff,
         metalness: 0.1,
         roughness: 0.05,
-        transmission: 0.9,
+        transmission: 0.85,
         thickness: 0.4,
         ior: 1.45,
         clearcoat: 1,
         clearcoatRoughness: 0.1,
         transparent: true,
-        opacity: 0.55,
+        opacity: 0.5,
       }),
     []
   );
@@ -222,15 +222,15 @@ export default function Bottle3D({
         <meshStandardMaterial
           color={fromColor}
           emissive={fromColor}
-          emissiveIntensity={0.5}
+          emissiveIntensity={0.4}
           metalness={0.1}
           roughness={0.2}
           transparent
-          opacity={0.9}
+          opacity={0.88}
         />
       </mesh>
 
-      {/* Curved label wrapping the bottle */}
+      {/* Curved label wrapping the bottle — uses MeshBasicMaterial so it's ALWAYS visible */}
       <mesh
         geometry={labelGeometry}
         material={labelMaterial}
@@ -243,16 +243,14 @@ export default function Bottle3D({
         <meshBasicMaterial
           color={colorFrom}
           transparent
-          opacity={0.2}
+          opacity={0.15}
           side={THREE.DoubleSide}
-          blending={THREE.AdditiveBlending}
         />
       </mesh>
 
       {/* Point lights for inner glow */}
-      <pointLight position={[0, 0, 2]} color={colorFrom} intensity={3} distance={10} />
-      <pointLight position={[0, -1, 0]} color={colorTo} intensity={2.5} distance={6} />
-      <pointLight position={[0, 2, 3]} color="#ffffff" intensity={2} distance={10} />
+      <pointLight position={[0, 0, 2]} color={colorFrom} intensity={2} distance={8} />
+      <pointLight position={[0, -1, 0]} color={colorTo} intensity={1.5} distance={5} />
     </group>
   );
 }
