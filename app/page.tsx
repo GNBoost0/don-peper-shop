@@ -8,6 +8,7 @@ import { PRODUCTS } from '@/lib/products';
 import NeonButton from '@/components/ui/NeonButton';
 
 const Scene = dynamic(() => import('@/components/three/Scene'), { ssr: false });
+const FeaturedBottle = dynamic(() => import('@/components/three/CardBottle'), { ssr: false });
 
 export default function HomePage() {
   const containerRef = useRef<HTMLElement>(null);
@@ -126,29 +127,24 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
               >
                 <Link href={`/produit/${product.slug}`}>
-                  <div
-                    className="group relative overflow-hidden rounded-2xl border border-dp-gold/15 p-6 text-center transition-all hover:border-dp-gold/30 hover:shadow-xl bg-dp-surface h-full"
-                    style={{
-                      background: `linear-gradient(135deg, ${product.flavor.glow}, transparent)`,
-                    }}
-                  >
-                    <div className="text-4xl mb-3">{product.flavor.fruitEmoji}</div>
-                    <h3
-                      className="text-lg font-display bg-gradient-to-r bg-clip-text text-transparent"
-                      style={{
-                        backgroundImage: `linear-gradient(135deg, ${product.flavor.colorFrom}, ${product.flavor.colorTo})`,
-                      }}
-                    >
-                      {product.flavor.name}
-                    </h3>
-                    <p className="text-xs text-dp-ink-muted mt-1">Dès {product.formats[0].price}€</p>
-
-                    <div
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                      style={{
-                        background: `radial-gradient(ellipse at center, ${product.flavor.glow} 0%, transparent 70%)`,
-                      }}
-                    />
+                  <div className="group relative overflow-hidden rounded-2xl border border-black/8 bg-white transition-all duration-500 hover:border-dp-gold/30 hover:shadow-xl hover:shadow-dp-gold/10 h-full flex flex-col">
+                    <div className="relative h-56">
+                      <FeaturedBottle flavor={product.flavor} />
+                    </div>
+                    <div className="p-4 text-center border-t border-black/5">
+                      <h3
+                        className="text-lg font-display bg-gradient-to-r bg-clip-text text-transparent"
+                        style={{
+                          backgroundImage: `linear-gradient(135deg, ${product.flavor.colorFrom}, ${product.flavor.colorTo})`,
+                        }}
+                      >
+                        {product.flavor.name}
+                      </h3>
+                      <p className="text-xs text-dp-ink-muted mt-1">
+                        <span className="mr-1">{product.flavor.fruitEmoji}</span>
+                        Dès {product.formats[0].price}€
+                      </p>
+                    </div>
                   </div>
                 </Link>
               </motion.div>
