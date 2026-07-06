@@ -25,7 +25,7 @@ export default function AboutPage() {
             <h1 className="text-5xl md:text-7xl font-display bg-gradient-to-r from-dp-gold via-dp-gold-light to-dp-gold bg-clip-text text-transparent">
               Don Peper
             </h1>
-            <p className="mt-4 text-xl text-white/60 font-light">
+            <p className="mt-4 text-xl text-dp-ink/60 font-light">
               Un grand-père, une passion, un héritage de cœur
             </p>
           </motion.div>
@@ -44,19 +44,19 @@ export default function AboutPage() {
             className="glass rounded-3xl p-10 md:p-14"
           >
             <h2 className="text-3xl font-display text-dp-gold mb-6">Peper, l'Homme derrière le Rhum</h2>
-            <p className="text-white/70 leading-relaxed text-lg">
+            <p className="text-dp-ink/70 leading-relaxed text-lg">
               Dans les Ardennes, au cœur d'une nature généreuse et authentique, vit un homme que
               tout le monde appelle <strong className="text-dp-gold">Peper</strong>. Grand-père
               aimant, père dévoué et mari attentionné, Peper est de ces personnages dont la simple
               présence réchauffe une pièce entière.
             </p>
-            <p className="text-white/70 leading-relaxed text-lg mt-4">
+            <p className="text-dp-ink/70 leading-relaxed text-lg mt-4">
               Depuis plus de <strong className="text-dp-gold">10 ans</strong>, il consacre son temps
               libre à une passion qui ne l'a jamais quitté : l'art du rhum infusé. Ce qui a commencé
               comme un hobby curieux s'est transformé en un véritable savoir-faire, affiné année
               après année, bouteille après bouteille.
             </p>
-            <p className="text-white/70 leading-relaxed text-lg mt-4">
+            <p className="text-dp-ink/70 leading-relaxed text-lg mt-4">
               Chaque fruit est choisi avec soin, chaque infusion est surveillée avec patience. Dans
               la cave de Peper, le temps fait son œuvre — et le résultat est à la hauteur de
               l'amour qu'il y met.
@@ -72,19 +72,19 @@ export default function AboutPage() {
             className="glass rounded-3xl p-10 md:p-14"
           >
             <h2 className="text-3xl font-display text-dp-gold mb-6">Une Famille, un Pilier</h2>
-            <p className="text-white/70 leading-relaxed text-lg">
+            <p className="text-dp-ink/70 leading-relaxed text-lg">
               Derrière Peper, il y a sa femme — sa partenaire de toujours, celle qui partage chaque
               instant, chaque épreuve et chaque joie. Ensemble, ils ont bâti une famille unie,
               fondée sur l'amour et la bienveillance.
             </p>
-            <p className="text-white/70 leading-relaxed text-lg mt-4">
+            <p className="text-dp-ink/70 leading-relaxed text-lg mt-4">
               Au centre de leur vie : leur fille <strong className="text-dp-gold">Magalie</strong>.
               Trisomique, rayonnante, elle est le cœur battant de la famille. Peper et sa femme se
               consacrent à elle avec une tendresse et un dévouement sans limite. Magalie apporte à
               leur vie une dimension unique — celle de la pure joie, de l'authenticité et de l'amour
               inconditionnel.
             </p>
-            <p className="text-white/70 leading-relaxed text-lg mt-4">
+            <p className="text-dp-ink/70 leading-relaxed text-lg mt-4">
               C'est cet amour-là que l'on retrouve dans chaque bouteille de Don Peper. Un rhum fait
               avec le cœur, par un homme qui sait que les meilleures choses de la vie prennent du
               temps — tout comme sa fille lui apprend chaque jour que le bonheur est dans les
@@ -101,12 +101,12 @@ export default function AboutPage() {
             className="glass rounded-3xl p-10 md:p-14"
           >
             <h2 className="text-3xl font-display text-dp-gold mb-6">Enraciné dans les Ardennes</h2>
-            <p className="text-white/70 leading-relaxed text-lg">
+            <p className="text-dp-ink/70 leading-relaxed text-lg">
               Les Ardennes — ses forêts profondes, ses vallées brumeuses, ses saisons qui marquent
               le rythme. C'est ce décor, à la fois sauvage et apaisant, qui inspire Peper au
               quotidien. Une terre de caractère, comme son rhum.
             </p>
-            <p className="text-white/70 leading-relaxed text-lg mt-4">
+            <p className="text-dp-ink/70 leading-relaxed text-lg mt-4">
               Ici, on ne court pas après le temps. On le respire. On l'infuse. Et c'est précisément
               cette philosophie qui donne aux rhums Don Peper leur âme : lenteur, patience, et un
               respect absolu du fruit.
@@ -125,22 +125,22 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <div className="text-3xl mb-3">🌿</div>
-                <h3 className="text-lg font-medium text-white mb-2">Fruits frais</h3>
-                <p className="text-sm text-white/50">
+                <h3 className="text-lg font-medium text-dp-ink mb-2">Fruits frais</h3>
+                <p className="text-sm text-dp-ink/50">
                   Sélectionnés à maturité parfaite, jamais congelés. Le fruit d'abord, toujours.
                 </p>
               </div>
               <div>
                 <div className="text-3xl mb-3">⏳</div>
-                <h3 className="text-lg font-medium text-white mb-2">10 ans d'expérience</h3>
-                <p className="text-sm text-white/50">
+                <h3 className="text-lg font-medium text-dp-ink mb-2">10 ans d'expérience</h3>
+                <p className="text-sm text-dp-ink/50">
                   Une décennie d'essais, d'affinage et de patience pour arriver à la perfection.
                 </p>
               </div>
               <div>
                 <div className="text-3xl mb-3">❤️</div>
-                <h3 className="text-lg font-medium text-white mb-2">Fait avec le cœur</h3>
-                <p className="text-sm text-white/50">
+                <h3 className="text-lg font-medium text-dp-ink mb-2">Fait avec le cœur</h3>
+                <p className="text-sm text-dp-ink/50">
                   Chaque bouteille porte l'âme d'une famille ardennaise passionnée.
                 </p>
               </div>
@@ -154,8 +154,8 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-3xl font-display text-white mb-4">Goûtez à l'histoire</h2>
-            <p className="text-white/50 mb-8">
+            <h2 className="text-3xl font-display text-dp-ink mb-4">Goûtez à l'histoire</h2>
+            <p className="text-dp-ink/50 mb-8">
               Chaque gorgée raconte celle d'un grand-père, d'une famille, et d'une passion de 10 ans.
             </p>
             <Link href="/boutique">

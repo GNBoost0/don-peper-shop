@@ -31,8 +31,8 @@ export default function FormatSelector({
             className={cn(
               'relative rounded-xl border p-4 text-center transition-all',
               isSelected
-                ? 'border-transparent text-white'
-                : 'border-white/10 text-white/60 hover:border-white/30'
+                ? 'border-transparent text-dp-ink'
+                : 'border-dp-gold/15 text-dp-ink/60 hover:border-dp-ink/30'
             )}
             style={
               isSelected
@@ -49,7 +49,7 @@ export default function FormatSelector({
             <p
               className={cn(
                 'text-lg font-bold mt-1',
-                isSelected ? '' : 'text-white/80'
+                isSelected ? '' : 'text-dp-ink/80'
               )}
               style={isSelected ? { color: colorFrom } : undefined}
             >

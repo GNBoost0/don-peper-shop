@@ -72,10 +72,10 @@ export default function ParticleField({
         size={size}
         color={color}
         transparent
-        opacity={0.6}
+        opacity={0.5}
         sizeAttenuation
         depthWrite={false}
-        blending={THREE.AdditiveBlending}
+        blending={THREE.NormalBlending}
       />
     </points>
   );

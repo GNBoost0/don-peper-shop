@@ -13,14 +13,14 @@ export default function ShippingCalculator({ country, onCountryChange }: Shippin
   const deliverable = isDeliverable(country);
 
   return (
-    <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
-      <label className="text-xs text-white/40 mb-2 block uppercase tracking-wider">
+    <div className="rounded-xl border border-dp-ink/10 bg-dp-surface/[0.02] p-4">
+      <label className="text-xs text-dp-ink/40 mb-2 block uppercase tracking-wider">
         Pays de livraison
       </label>
       <select
         value={country}
         onChange={(e) => onCountryChange(e.target.value)}
-        className="w-full rounded-lg border border-white/10 bg-dp-bg px-4 py-2.5 text-sm text-white focus:border-dp-gold/50 focus:outline-none"
+        className="w-full rounded-lg border border-dp-ink/10 bg-dp-bg px-4 py-2.5 text-sm text-dp-ink focus:border-dp-gold/50 focus:outline-none"
       >
         {EU_COUNTRIES.map((c) => (
           <option key={c.code} value={c.code}>
@@ -30,9 +30,9 @@ export default function ShippingCalculator({ country, onCountryChange }: Shippin
       </select>
 
       <div className="mt-3 flex items-center justify-between">
-        <span className="text-sm text-white/50">Frais de livraison</span>
+        <span className="text-sm text-dp-ink/50">Frais de livraison</span>
         {deliverable ? (
-          <span className={`text-sm font-medium ${cost === 0 ? 'text-green-400' : 'text-white/80'}`}>
+          <span className={`text-sm font-medium ${cost === 0 ? 'text-green-400' : 'text-dp-ink/80'}`}>
             {cost === 0 ? 'Offerte' : formatPrice(cost)}
           </span>
         ) : (

@@ -71,16 +71,16 @@ export default function CartDrawer() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed right-0 top-0 bottom-0 z-[61] w-full max-w-md bg-dp-bg-2/95 backdrop-blur-2xl border-l border-white/10 flex flex-col"
+            className="fixed right-0 top-0 bottom-0 z-[61] w-full max-w-md bg-dp-surface/95 backdrop-blur-2xl border-l border-dp-gold/15 flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-white/10">
-              <h2 className="text-lg font-display tracking-wide text-white">
+            <div className="flex items-center justify-between p-6 border-b border-dp-gold/10">
+              <h2 className="text-lg font-display tracking-wide text-dp-ink">
                 Votre Panier
               </h2>
               <button
                 onClick={closeCart}
-                className="rounded-lg p-2 text-white/50 hover:text-white hover:bg-white/5 transition-all"
+                className="rounded-lg p-2 text-dp-ink/50 hover:text-dp-ink hover:bg-dp-surface/5 transition-all"
                 aria-label="Fermer"
               >
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -94,7 +94,7 @@ export default function CartDrawer() {
               {items.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full text-center">
                   <div className="text-6xl mb-4 opacity-20">🛒</div>
-                  <p className="text-white/40 mb-2">Votre panier est vide</p>
+                  <p className="text-dp-ink/40 mb-2">Votre panier est vide</p>
                   <Link
                     href="/boutique"
                     onClick={closeCart}
@@ -112,36 +112,36 @@ export default function CartDrawer() {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: 20 }}
-                      className="flex gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-3"
+                      className="flex gap-3 rounded-xl border border-dp-gold/10 bg-dp-bg/50 p-3"
                     >
                       {/* Mini bottle */}
                       <div
-                        className="relative flex-shrink-0 w-12 h-20 rounded-md border border-white/10 overflow-hidden"
+                        className="relative flex-shrink-0 w-12 h-20 rounded-md border border-dp-gold/15 overflow-hidden"
                         style={{
                           background: `linear-gradient(180deg, ${item.colorFrom}66, ${item.colorTo}aa)`,
                           boxShadow: `0 0 15px ${item.colorFrom}33`,
                         }}
                       >
-                        <div className="absolute top-1 left-1 w-1 h-16 bg-white/20 rounded-full" />
+                        <div className="absolute top-1 left-1 w-1 h-16 bg-dp-surface/20 rounded-full" />
                       </div>
 
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-white">
+                        <p className="text-sm font-medium text-dp-ink">
                           {item.flavorName} — {item.formatLabel}
                         </p>
-                        <p className="text-xs text-white/40">{formatPrice(item.price)}</p>
+                        <p className="text-xs text-dp-ink/40">{formatPrice(item.price)}</p>
 
                         <div className="mt-2 flex items-center gap-2">
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                            className="flex h-7 w-7 items-center justify-center rounded-md border border-white/10 text-white/60 hover:text-white hover:border-white/30 transition-all"
+                            className="flex h-7 w-7 items-center justify-center rounded-md border border-dp-gold/15 text-dp-ink/60 hover:text-dp-ink hover:border-dp-ink/30 transition-all"
                           >
                             −
                           </button>
-                          <span className="w-8 text-center text-sm text-white">{item.quantity}</span>
+                          <span className="w-8 text-center text-sm text-dp-ink">{item.quantity}</span>
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                            className="flex h-7 w-7 items-center justify-center rounded-md border border-white/10 text-white/60 hover:text-white hover:border-white/30 transition-all"
+                            className="flex h-7 w-7 items-center justify-center rounded-md border border-dp-gold/15 text-dp-ink/60 hover:text-dp-ink hover:border-dp-ink/30 transition-all"
                           >
                             +
                           </button>
@@ -155,7 +155,7 @@ export default function CartDrawer() {
                       </div>
 
                       <div className="text-right">
-                        <p className="text-sm font-semibold text-white">
+                        <p className="text-sm font-semibold text-dp-ink">
                           {formatPrice(item.price * item.quantity)}
                         </p>
                       </div>
@@ -167,16 +167,16 @@ export default function CartDrawer() {
 
             {/* Footer */}
             {items.length > 0 && (
-              <div className="border-t border-white/10 p-6 space-y-4">
+              <div className="border-t border-dp-gold/10 p-6 space-y-4">
                 {/* Country selector */}
                 <div>
-                  <label className="text-xs text-white/40 mb-2 block uppercase tracking-wider">
+                  <label className="text-xs text-dp-ink/40 mb-2 block uppercase tracking-wider">
                     Pays de livraison
                   </label>
                   <select
                     value={country}
                     onChange={(e) => setCountry(e.target.value)}
-                    className="w-full rounded-xl border border-white/10 bg-dp-bg px-4 py-2.5 text-sm text-white focus:border-dp-gold/50 focus:outline-none"
+                    className="w-full rounded-xl border border-dp-gold/15 bg-dp-bg px-4 py-2.5 text-sm text-dp-ink focus:border-dp-gold/50 focus:outline-none"
                   >
                     {EU_COUNTRIES.map((c) => (
                       <option key={c.code} value={c.code}>
@@ -184,22 +184,22 @@ export default function CartDrawer() {
                       </option>
                     ))}
                   </select>
-                  <p className="mt-1.5 text-xs text-white/40">
+                  <p className="mt-1.5 text-xs text-dp-ink/40">
                     {getShippingLabel(country)}
                   </p>
                 </div>
 
                 {/* Totals */}
                 <div className="space-y-1.5">
-                  <div className="flex justify-between text-sm text-white/50">
+                  <div className="flex justify-between text-sm text-dp-ink/50">
                     <span>Sous-total</span>
                     <span>{formatPrice(subtotal)}</span>
                   </div>
-                  <div className="flex justify-between text-sm text-white/50">
+                  <div className="flex justify-between text-sm text-dp-ink/50">
                     <span>Livraison</span>
                     <span>{shippingCost === 0 ? 'Offerte' : formatPrice(shippingCost)}</span>
                   </div>
-                  <div className="flex justify-between text-lg font-semibold text-white pt-2 border-t border-white/5">
+                  <div className="flex justify-between text-lg font-semibold text-dp-ink pt-2 border-t border-dp-gold/5">
                     <span>Total</span>
                     <span>{formatPrice(total)}</span>
                   </div>
@@ -218,7 +218,7 @@ export default function CartDrawer() {
                   {loading ? 'Redirection...' : 'Payer avec Stripe'}
                 </button>
 
-                <p className="text-center text-xs text-white/30">
+                <p className="text-center text-xs text-dp-ink/30">
                   Paiement sécurisé · CB · Apple Pay · Google Pay
                 </p>
               </div>

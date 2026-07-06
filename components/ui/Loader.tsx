@@ -40,14 +40,14 @@ export default function Loader() {
         </motion.div>
 
         <div className="mt-8 w-48 mx-auto">
-          <div className="h-px bg-white/10 overflow-hidden rounded-full">
+          <div className="h-px bg-dp-surface/10 overflow-hidden rounded-full">
             <motion.div
               className="h-full bg-gradient-to-r from-dp-gold to-dp-gold-light"
               animate={{ width: `${Math.min(progress, 100)}%` }}
               transition={{ ease: 'easeOut' }}
             />
           </div>
-          <p className="mt-3 text-xs text-white/30 tracking-widest uppercase">
+          <p className="mt-3 text-xs text-dp-ink/30 tracking-widest uppercase">
             Chargement...
           </p>
         </div>

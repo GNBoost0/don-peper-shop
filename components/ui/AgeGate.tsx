@@ -51,19 +51,19 @@ export default function AgeGate() {
           exit={{ opacity: 0, transition: { duration: 0.6 } }}
           className="fixed inset-0 z-[9999] flex items-center justify-center"
           style={{
-            background: 'radial-gradient(ellipse at center, #0a0612 0%, #050208 100%)',
+            background: 'radial-gradient(ellipse at center, #faf6f0 0%, #f0e8dc 100%)',
           }}
         >
-          {/* Animated background particles */}
+          {/* Floating particles */}
           <div className="absolute inset-0 overflow-hidden">
-            {Array.from({ length: 30 }).map((_, i) => (
+            {Array.from({ length: 25 }).map((_, i) => (
               <motion.div
                 key={i}
                 className="absolute rounded-full"
                 style={{
-                  width: Math.random() * 4 + 1 + 'px',
-                  height: Math.random() * 4 + 1 + 'px',
-                  background: `rgba(212, 165, 116, ${Math.random() * 0.4 + 0.1})`,
+                  width: Math.random() * 5 + 2 + 'px',
+                  height: Math.random() * 5 + 2 + 'px',
+                  background: `rgba(192, 140, 90, ${Math.random() * 0.4 + 0.15})`,
                   left: Math.random() * 100 + '%',
                   bottom: '-10px',
                 }}
@@ -95,28 +95,28 @@ export default function AgeGate() {
               className="mb-8"
             >
               <h1
-                className="text-5xl font-display tracking-[0.2em] bg-gradient-to-r from-dp-gold via-dp-gold-light to-dp-gold bg-clip-text text-transparent"
-                style={{ filter: 'drop-shadow(0 0 30px rgba(212, 165, 116, 0.4))' }}
+                className="text-5xl font-display tracking-[0.2em] bg-gradient-to-r from-dp-gold-dark via-dp-gold to-dp-gold-dark bg-clip-text text-transparent"
+                style={{ filter: 'drop-shadow(0 0 30px rgba(192, 140, 90, 0.3))' }}
               >
                 DON PEPER
               </h1>
               <div className="mt-2 h-px bg-gradient-to-r from-transparent via-dp-gold/50 to-transparent" />
-              <p className="mt-3 text-xs tracking-[0.4em] text-dp-gold/60 uppercase">
+              <p className="mt-3 text-xs tracking-[0.4em] text-dp-gold/70 uppercase">
                 L'Art du Rhum Infusé
               </p>
             </motion.div>
 
-            {/* Warning icon */}
+            {/* Icon */}
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.6, type: 'spring', stiffness: 200 }}
               className="mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-dp-gold/30"
               style={{
-                background: 'radial-gradient(circle, rgba(212,165,116,0.1) 0%, transparent 70%)',
+                background: 'radial-gradient(circle, rgba(192,140,90,0.1) 0%, transparent 70%)',
               }}
             >
-              <svg className="h-8 w-8 text-dp-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <svg className="h-8 w-8 text-dp-gold-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
               </svg>
             </motion.div>
@@ -125,7 +125,7 @@ export default function AgeGate() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="text-lg text-white/80 mb-2"
+              className="text-lg text-dp-ink mb-2 font-medium"
             >
               Êtes-vous majeur·e ?
             </motion.p>
@@ -133,7 +133,7 @@ export default function AgeGate() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.9 }}
-              className="text-sm text-white/40 mb-8"
+              className="text-sm text-dp-ink-muted mb-8"
             >
               La vente d'alcool est interdite aux mineur·e·s. L'abus d'alcool est dangereux pour la santé.
             </motion.p>
@@ -146,18 +146,19 @@ export default function AgeGate() {
             >
               <button
                 onClick={() => handleVerify(true)}
-                className="group relative overflow-hidden rounded-xl px-8 py-3 font-semibold text-white transition-all"
+                className="group relative overflow-hidden rounded-xl px-8 py-3 font-semibold text-dp-surface transition-all"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(212,165,116,0.2), rgba(212,165,116,0.05))',
-                  border: '1px solid rgba(212,165,116,0.4)',
+                  background: 'linear-gradient(135deg, #c08c5a, #9a6e42)',
+                  border: '1px solid rgba(192,140,90,0.5)',
+                  boxShadow: '0 4px 20px rgba(192,140,90,0.25)',
                 }}
               >
                 <span className="relative z-10">OUI, J'AI 18 ANS OU PLUS</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-dp-gold/0 via-dp-gold/20 to-dp-gold/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </button>
               <button
                 onClick={() => handleVerify(false)}
-                className="rounded-xl px-8 py-3 font-medium text-white/50 border border-white/10 hover:border-white/30 hover:text-white/80 transition-all"
+                className="rounded-xl px-8 py-3 font-medium text-dp-ink-muted border border-dp-ink/15 hover:border-dp-ink/30 hover:text-dp-ink transition-all"
               >
                 Non
               </button>

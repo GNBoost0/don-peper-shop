@@ -21,10 +21,10 @@ export default function BoutiquePage() {
           className="text-center mb-16"
         >
           <p className="text-xs tracking-[0.4em] text-dp-gold/50 uppercase mb-3">La Collection</p>
-          <h1 className="text-5xl md:text-6xl font-display text-white">
+          <h1 className="text-5xl md:text-6xl font-display text-dp-ink">
             Notre Boutique
           </h1>
-          <p className="mt-4 text-white/40 max-w-2xl mx-auto">
+          <p className="mt-4 text-dp-ink/40 max-w-2xl mx-auto">
             Découvrez nos rhums arrangés artisanaux, infusés avec passion et des fruits d'exception.
           </p>
         </motion.div>
@@ -46,18 +46,18 @@ export default function BoutiquePage() {
         >
           <div className="glass rounded-2xl p-6 text-center">
             <div className="text-2xl mb-2">🚚</div>
-            <h3 className="text-sm font-semibold text-white">Livraison offerte</h3>
-            <p className="text-xs text-white/40 mt-1">France & Belgique</p>
+            <h3 className="text-sm font-semibold text-dp-ink">Livraison offerte</h3>
+            <p className="text-xs text-dp-ink/40 mt-1">France & Belgique</p>
           </div>
           <div className="glass rounded-2xl p-6 text-center">
             <div className="text-2xl mb-2">🔒</div>
-            <h3 className="text-sm font-semibold text-white">Paiement sécurisé</h3>
-            <p className="text-xs text-white/40 mt-1">Stripe · CB · Apple Pay</p>
+            <h3 className="text-sm font-semibold text-dp-ink">Paiement sécurisé</h3>
+            <p className="text-xs text-dp-ink/40 mt-1">Stripe · CB · Apple Pay</p>
           </div>
           <div className="glass rounded-2xl p-6 text-center">
             <div className="text-2xl mb-2">✨</div>
-            <h3 className="text-sm font-semibold text-white">Artisanal</h3>
-            <p className="text-xs text-white/40 mt-1">Infusion naturelle 3 mois</p>
+            <h3 className="text-sm font-semibold text-dp-ink">Artisanal</h3>
+            <p className="text-xs text-dp-ink/40 mt-1">Infusion naturelle 3 mois</p>
           </div>
         </motion.div>
       </div>

@@ -35,7 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${inter.variable} ${cormorant.variable} noise`}>
-      <body className="bg-dp-bg text-white min-h-screen antialiased">
+      <body className="bg-dp-bg text-dp-ink min-h-screen antialiased">
         <AgeGate />
         <Navbar />
         <CartDrawer />

@@ -44,7 +44,7 @@ export default function Navbar() {
           className={cn(
             'mx-auto max-w-7xl flex items-center justify-between rounded-2xl px-6 py-3 transition-all duration-500',
             scrolled
-              ? 'bg-dp-bg-2/70 backdrop-blur-xl border border-white/5 shadow-lg shadow-black/50'
+              ? 'bg-dp-surface/80 backdrop-blur-xl border border-dp-gold/15 shadow-lg shadow-black/5'
               : 'bg-transparent border border-transparent'
           )}
         >
@@ -68,7 +68,7 @@ export default function Navbar() {
                   'relative px-4 py-2 text-sm font-medium transition-colors rounded-lg',
                   pathname === link.href
                     ? 'text-dp-gold'
-                    : 'text-white/60 hover:text-white'
+                    : 'text-dp-ink/60 hover:text-dp-ink'
                 )}
               >
                 {link.label}
@@ -87,7 +87,7 @@ export default function Navbar() {
             {/* Cart button */}
             <button
               onClick={toggleCart}
-              className="relative rounded-xl p-2.5 text-white/70 hover:text-white hover:bg-white/5 transition-all"
+              className="relative rounded-xl p-2.5 text-dp-ink/70 hover:text-dp-ink hover:bg-dp-surface/5 transition-all"
               aria-label="Panier"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -103,7 +103,7 @@ export default function Navbar() {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden rounded-xl p-2.5 text-white/70 hover:text-white hover:bg-white/5 transition-all"
+              className="md:hidden rounded-xl p-2.5 text-dp-ink/70 hover:text-dp-ink hover:bg-dp-surface/5 transition-all"
               aria-label="Menu"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -125,7 +125,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden mt-2 mx-auto max-w-7xl overflow-hidden rounded-2xl bg-dp-bg-2/90 backdrop-blur-xl border border-white/5"
+              className="md:hidden mt-2 mx-auto max-w-7xl overflow-hidden rounded-2xl bg-dp-surface/90 backdrop-blur-xl border border-dp-gold/15"
             >
               {NAV_LINKS.map((link) => (
                 <Link
@@ -133,8 +133,8 @@ export default function Navbar() {
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className={cn(
-                    'block px-6 py-3 text-sm font-medium border-b border-white/5 last:border-0',
-                    pathname === link.href ? 'text-dp-gold' : 'text-white/60'
+                    'block px-6 py-3 text-sm font-medium border-b border-dp-ink/5 last:border-0',
+                    pathname === link.href ? 'text-dp-gold' : 'text-dp-ink/60'
                   )}
                 >
                   {link.label}

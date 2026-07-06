@@ -26,18 +26,19 @@ function SceneContent({
 }: SceneProps) {
   return (
     <>
-      <ambientLight intensity={0.6} />
+      <ambientLight intensity={0.9} />
       <spotLight position={[5, 10, 5]} angle={0.3} penumbra={1} intensity={3} color="#ffffff" />
       <spotLight position={[-5, 5, -5]} angle={0.4} penumbra={1} intensity={2} color={flavor?.accent ?? '#ff006e'} />
-      <directionalLight position={[0, 5, 5]} intensity={1.5} color="#ffffff" />
-      <pointLight position={[0, 0, 5]} intensity={1.5} color="#ffffff" distance={15} />
+      <directionalLight position={[0, 5, 5]} intensity={2} color="#fff5e8" />
+      <pointLight position={[0, 0, 5]} intensity={2} color="#ffffff" distance={15} />
 
-      <ParticleField color={particleColor ?? flavor?.accent ?? '#d4a574'} count={2000} />
+      <ParticleField color={particleColor ?? flavor?.accent ?? '#c08c5a'} count={1500} />
 
       {showBottle && (
         <Bottle3D
           colorFrom={flavor?.colorFrom ?? '#ff006e'}
           colorTo={flavor?.colorTo ?? '#ff4d8d'}
+          flavorName={flavor?.name ?? ''}
           interactive={interactive}
           floatSpeed={interactive ? 0.5 : 1}
         />
@@ -50,12 +51,12 @@ function SceneContent({
               position: [-2.8, 1.2, 0],
               title: flavor?.name.toUpperCase() ?? 'DON PEPER',
               lines: ['Rhum infusé', 'Artisanal', 'Premium'],
-              color: flavor?.accent ?? '#d4a574',
+              color: flavor?.accent ?? '#c08c5a',
             },
             {
               position: [2.8, -0.3, 0],
               title: 'CARACTÈRE',
-              lines: ['70cl / 1L / 10cl', 'Infusion 3 mois', 'Production limitée'],
+              lines: ['75cl / 1L / 10cl', 'Infusion 3 mois', 'Production limitée'],
               color: flavor?.colorFrom ?? '#ff006e',
             },
           ]}
@@ -64,14 +65,14 @@ function SceneContent({
 
       <ContactShadows
         position={[0, -2.5, 0]}
-        opacity={0.4}
+        opacity={0.15}
         scale={10}
         blur={2}
         far={5}
-        color="#000000"
+        color="#2a1f15"
       />
 
-      <Environment preset="sunset" />
+      <Environment preset="apartment" />
 
       <AdaptiveDpr pixelated />
     </>

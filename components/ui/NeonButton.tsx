@@ -24,7 +24,7 @@ export default function NeonButton({
     <button
       className={cn(
         'group relative overflow-hidden rounded-xl px-8 py-3.5 font-semibold transition-all',
-        isFlavor ? 'text-white' : 'text-dp-bg',
+        isFlavor ? 'text-dp-ink' : 'text-dp-bg',
         className
       )}
       style={

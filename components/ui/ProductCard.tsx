@@ -26,10 +26,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
     >
       <Link href={`/produit/${product.slug}`}>
         <div
-          className="relative overflow-hidden rounded-2xl border border-white/10 backdrop-blur-md transition-all duration-500 hover:border-white/20 hover:shadow-2xl"
-          style={{
-            background: `linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.2) 100%)`,
-          }}
+          className="relative overflow-hidden rounded-2xl border border-dp-gold/15 backdrop-blur-md transition-all duration-500 hover:border-dp-gold/30 hover:shadow-2xl bg-dp-surface/70"
         >
           {/* Glow effect on hover */}
           <div
@@ -63,14 +60,14 @@ export default function ProductCard({ product, index }: ProductCardProps) {
               <div className="absolute left-1/2 -translate-x-1/2 top-0 w-5 h-3 bg-gradient-to-b from-gray-700 to-gray-900 rounded-t-md" />
 
               {/* Neck */}
-              <div className="absolute left-1/2 -translate-x-1/2 top-3 w-5 h-6 bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-sm border-x border-white/10" />
+              <div className="absolute left-1/2 -translate-x-1/2 top-3 w-5 h-6 bg-gradient-to-b from-dp-ink/10 to-dp-ink/5 backdrop-blur-sm border-x border-dp-ink/10" />
 
               {/* Body */}
               <div
-                className="relative w-20 h-40 rounded-lg backdrop-blur-sm border border-white/15 overflow-hidden"
+                className="relative w-20 h-40 rounded-lg backdrop-blur-sm border border-dp-ink/10 overflow-hidden"
                 style={{
-                  background: `linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02))`,
-                  boxShadow: `inset 0 0 20px ${flavor.glow}, 0 0 30px ${flavor.glow}`,
+                  background: `linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3))`,
+                  boxShadow: `inset 0 0 20px ${flavor.glow}, 0 4px 30px rgba(0,0,0,0.08)`,
                 }}
               >
                 {/* Liquid */}
@@ -91,17 +88,17 @@ export default function ProductCard({ product, index }: ProductCardProps) {
                 </div>
 
                 {/* Label */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-20 bg-dp-bg/90 rounded-sm flex flex-col items-center justify-center">
-                  <div className="h-px w-10 bg-dp-gold/60 mb-1" />
-                  <div className="text-[7px] font-display tracking-widest text-dp-gold/90 text-center">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-20 bg-gradient-to-b from-[#1f1530] to-[#15102a] rounded-sm flex flex-col items-center justify-center">
+                  <div className="h-px w-10 bg-dp-gold/80 mb-1" />
+                  <div className="text-[7px] font-display tracking-widest text-dp-gold-light text-center font-bold">
                     DON<br />PEPER
                   </div>
-                  <div className="h-px w-10 bg-dp-gold/60 mt-1" />
-                  <div className="mt-1 text-[6px] text-white/40 tracking-wide">{flavor.nameEn.toUpperCase()}</div>
+                  <div className="h-px w-10 bg-dp-gold/80 mt-1" />
+                  <div className="mt-1 text-[6px] text-dp-surface/60 tracking-wide">{flavor.nameEn.toUpperCase()}</div>
                 </div>
 
                 {/* Glass shine */}
-                <div className="absolute top-2 left-1 w-2 h-32 bg-gradient-to-b from-white/30 to-transparent rounded-full" />
+                <div className="absolute top-2 left-1 w-2 h-32 bg-gradient-to-b from-dp-surface/60 to-transparent rounded-full" />
               </div>
 
               {/* Base glow */}
@@ -116,23 +113,23 @@ export default function ProductCard({ product, index }: ProductCardProps) {
           <div className="relative p-5 pt-3">
             <div className="flex items-start justify-between gap-2 mb-2">
               <div>
-                <h3 className="text-lg font-display text-white">
+                <h3 className="text-lg font-display text-dp-ink">
                   {flavor.name}
                 </h3>
-                <p className="text-xs text-white/40 tracking-wide">{flavor.nameEn}</p>
+                <p className="text-xs text-dp-ink/40 tracking-wide">{flavor.nameEn}</p>
               </div>
               <span className="text-2xl" role="img" aria-label={flavor.nameEn}>
                 {flavor.fruitEmoji}
               </span>
             </div>
 
-            <p className="text-xs text-white/40 line-clamp-2 mb-3 leading-relaxed">
+            <p className="text-xs text-dp-ink/40 line-clamp-2 mb-3 leading-relaxed">
               {flavor.description}
             </p>
 
             <div className="flex items-end justify-between">
               <div>
-                <span className="text-xs text-white/40">À partir de</span>
+                <span className="text-xs text-dp-ink/40">À partir de</span>
                 <p
                   className="text-lg font-semibold bg-gradient-to-r bg-clip-text text-transparent"
                   style={{ backgroundImage: `linear-gradient(135deg, ${flavor.colorFrom}, ${flavor.colorTo})` }}
@@ -141,7 +138,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
                 </p>
               </div>
               <div className="text-right">
-                <span className="text-xs text-white/30">{formats.length} formats</span>
+                <span className="text-xs text-dp-ink/30">{formats.length} formats</span>
               </div>
             </div>
           </div>

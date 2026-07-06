@@ -32,7 +32,7 @@ export default function ProductPage() {
   if (!product) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-4">
-        <h1 className="text-3xl font-display text-white mb-4">Produit introuvable</h1>
+        <h1 className="text-3xl font-display text-dp-ink mb-4">Produit introuvable</h1>
         <Link href="/boutique" className="text-dp-gold hover:text-dp-gold-light transition-colors">
           ← Retour à la boutique
         </Link>
@@ -72,13 +72,13 @@ export default function ProductPage() {
         <motion.nav
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="mb-8 flex items-center gap-2 text-sm text-white/40"
+          className="mb-8 flex items-center gap-2 text-sm text-dp-ink/40"
         >
-          <Link href="/" className="hover:text-white transition-colors">Accueil</Link>
+          <Link href="/" className="hover:text-dp-ink transition-colors">Accueil</Link>
           <span>/</span>
-          <Link href="/boutique" className="hover:text-white transition-colors">Boutique</Link>
+          <Link href="/boutique" className="hover:text-dp-ink transition-colors">Boutique</Link>
           <span>/</span>
-          <span className="text-white/60">{flavor.name}</span>
+          <span className="text-dp-ink/60">{flavor.name}</span>
         </motion.nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -105,8 +105,8 @@ export default function ProductPage() {
               transition={{ delay: 0.5 }}
               className="absolute top-6 left-6 glass rounded-xl px-4 py-2"
             >
-              <p className="text-xs text-white/40 uppercase tracking-wider">Infusion</p>
-              <p className="text-sm font-semibold text-white">3 mois</p>
+              <p className="text-xs text-dp-ink/40 uppercase tracking-wider">Infusion</p>
+              <p className="text-sm font-semibold text-dp-ink">3 mois</p>
             </motion.div>
 
             <motion.div
@@ -115,8 +115,8 @@ export default function ProductPage() {
               transition={{ delay: 0.6 }}
               className="absolute top-6 right-6 glass rounded-xl px-4 py-2"
             >
-              <p className="text-xs text-white/40 uppercase tracking-wider">Origine</p>
-              <p className="text-sm font-semibold text-white">Artisanal</p>
+              <p className="text-xs text-dp-ink/40 uppercase tracking-wider">Origine</p>
+              <p className="text-sm font-semibold text-dp-ink">Artisanal</p>
             </motion.div>
 
             <motion.div
@@ -125,8 +125,8 @@ export default function ProductPage() {
               transition={{ delay: 0.7 }}
               className="absolute bottom-6 left-6 glass rounded-xl px-4 py-2"
             >
-              <p className="text-xs text-white/40 uppercase tracking-wider">Degré</p>
-              <p className="text-sm font-semibold text-white">40°</p>
+              <p className="text-xs text-dp-ink/40 uppercase tracking-wider">Degré</p>
+              <p className="text-sm font-semibold text-dp-ink">40°</p>
             </motion.div>
           </motion.div>
 
@@ -154,14 +154,14 @@ export default function ProductPage() {
                   </h1>
                 </div>
               </div>
-              <p className="text-white/50 leading-relaxed text-lg">
+              <p className="text-dp-ink/50 leading-relaxed text-lg">
                 {flavor.description}
               </p>
             </div>
 
             {/* Format selector */}
             <div>
-              <p className="text-sm font-semibold text-white/80 mb-3 uppercase tracking-wider">
+              <p className="text-sm font-semibold text-dp-ink/80 mb-3 uppercase tracking-wider">
                 Choisir un format
               </p>
               <FormatSelector
@@ -176,7 +176,7 @@ export default function ProductPage() {
             {/* Quantity & Add to cart */}
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-4">
-                <p className="text-sm font-semibold text-white/80 uppercase tracking-wider">
+                <p className="text-sm font-semibold text-dp-ink/80 uppercase tracking-wider">
                   Quantité
                 </p>
                 <QuantityPicker value={quantity} onChange={setQuantity} />
@@ -184,7 +184,7 @@ export default function ProductPage() {
 
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-xs text-white/40 uppercase tracking-wider">Prix total</p>
+                  <p className="text-xs text-dp-ink/40 uppercase tracking-wider">Prix total</p>
                   <p
                     className="text-3xl font-bold bg-gradient-to-r bg-clip-text text-transparent"
                     style={{
@@ -209,31 +209,31 @@ export default function ProductPage() {
 
             {/* Details */}
             <div className="glass rounded-2xl p-6 space-y-3">
-              <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-dp-ink/80 uppercase tracking-wider mb-4">
                 Caractéristiques
               </h3>
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
-                  <p className="text-white/40">Volume</p>
-                  <p className="text-white/80">{currentFormat?.volume}</p>
+                  <p className="text-dp-ink/40">Volume</p>
+                  <p className="text-dp-ink/80">{currentFormat?.volume}</p>
                 </div>
                 <div>
-                  <p className="text-white/40">Degré d'alcool</p>
-                  <p className="text-white/80">40%</p>
+                  <p className="text-dp-ink/40">Degré d'alcool</p>
+                  <p className="text-dp-ink/80">40%</p>
                 </div>
                 <div>
-                  <p className="text-white/40">Infusion</p>
-                  <p className="text-white/80">3 mois minimum</p>
+                  <p className="text-dp-ink/40">Infusion</p>
+                  <p className="text-dp-ink/80">3 mois minimum</p>
                 </div>
                 <div>
-                  <p className="text-white/40">Conservation</p>
-                  <p className="text-white/80">À l'abri de la lumière</p>
+                  <p className="text-dp-ink/40">Conservation</p>
+                  <p className="text-dp-ink/80">À l'abri de la lumière</p>
                 </div>
               </div>
             </div>
 
             {/* Shipping notice */}
-            <div className="flex items-center gap-3 text-sm text-white/40">
+            <div className="flex items-center gap-3 text-sm text-dp-ink/40">
               <svg className="h-5 w-5 flex-shrink-0 text-dp-gold/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-6m6 0V9.348c0-.621-.504-1.125-1.125-1.125H10.5c-.621 0-1.125.504-1.125 1.125v9.402m-6 0V5.625c0-.621.504-1.125 1.125-1.125H9.75c.621 0 1.125.504 1.125 1.125v1.875c0 .621.504 1.125 1.125 1.125h1.5c.621 0 1.125-.504 1.125-1.125V5.625" />
               </svg>

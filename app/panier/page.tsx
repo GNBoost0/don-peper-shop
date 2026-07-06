@@ -57,8 +57,8 @@ export default function CartPage() {
           className="text-center"
         >
           <div className="text-7xl mb-6 opacity-20">🛒</div>
-          <h1 className="text-3xl font-display text-white mb-3">Votre panier est vide</h1>
-          <p className="text-white/40 mb-8">Découvrez nos saveurs uniques de rhum infusé</p>
+          <h1 className="text-3xl font-display text-dp-ink mb-3">Votre panier est vide</h1>
+          <p className="text-dp-ink/40 mb-8">Découvrez nos saveurs uniques de rhum infusé</p>
           <Link href="/boutique">
             <NeonButton>Explorer la boutique</NeonButton>
           </Link>
@@ -73,7 +73,7 @@ export default function CartPage() {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl font-display text-white mb-8"
+          className="text-4xl font-display text-dp-ink mb-8"
         >
           Votre Panier
         </motion.h1>
@@ -92,14 +92,14 @@ export default function CartPage() {
               >
                 {/* Mini bottle */}
                 <div
-                  className="flex-shrink-0 w-16 h-28 rounded-lg border border-white/10 overflow-hidden relative"
+                  className="flex-shrink-0 w-16 h-28 rounded-lg border border-dp-gold/15 overflow-hidden relative"
                   style={{
                     background: `linear-gradient(180deg, ${item.colorFrom}66, ${item.colorTo}aa)`,
                     boxShadow: `0 0 15px ${item.colorFrom}33`,
                   }}
                 >
-                  <div className="absolute top-1 left-1 w-1 h-24 bg-white/20 rounded-full" />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[6px] text-white/60 tracking-wider text-center">
+                  <div className="absolute top-1 left-1 w-1 h-24 bg-dp-surface/20 rounded-full" />
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[6px] text-dp-ink/60 tracking-wider text-center">
                     DON<br />PEPER
                   </div>
                 </div>
@@ -107,26 +107,26 @@ export default function CartPage() {
                 <div className="flex-1">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h3 className="text-lg font-medium text-white">{item.flavorName}</h3>
-                      <p className="text-sm text-white/40">{item.formatLabel} · {item.volume}</p>
+                      <h3 className="text-lg font-medium text-dp-ink">{item.flavorName}</h3>
+                      <p className="text-sm text-dp-ink/40">{item.formatLabel} · {item.volume}</p>
                     </div>
-                    <p className="text-lg font-semibold text-white">
+                    <p className="text-lg font-semibold text-dp-ink">
                       {formatPrice(item.price * item.quantity)}
                     </p>
                   </div>
 
                   <div className="mt-3 flex items-center gap-4">
-                    <div className="inline-flex items-center gap-3 rounded-xl border border-white/10 px-2 py-1">
+                    <div className="inline-flex items-center gap-3 rounded-xl border border-dp-gold/15 px-2 py-1">
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                        className="h-7 w-7 flex items-center justify-center rounded-lg text-white/60 hover:text-white hover:bg-white/5 transition-all"
+                        className="h-7 w-7 flex items-center justify-center rounded-lg text-dp-ink/60 hover:text-dp-ink hover:bg-dp-surface/5 transition-all"
                       >
                         −
                       </button>
-                      <span className="w-8 text-center text-sm text-white">{item.quantity}</span>
+                      <span className="w-8 text-center text-sm text-dp-ink">{item.quantity}</span>
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        className="h-7 w-7 flex items-center justify-center rounded-lg text-white/60 hover:text-white hover:bg-white/5 transition-all"
+                        className="h-7 w-7 flex items-center justify-center rounded-lg text-dp-ink/60 hover:text-dp-ink hover:bg-dp-surface/5 transition-all"
                       >
                         +
                       </button>
@@ -145,7 +145,7 @@ export default function CartPage() {
 
             <button
               onClick={clearCart}
-              className="text-sm text-white/30 hover:text-white/60 transition-colors"
+              className="text-sm text-dp-ink/30 hover:text-dp-ink/60 transition-colors"
             >
               Vider le panier
             </button>
@@ -154,16 +154,16 @@ export default function CartPage() {
           {/* Summary */}
           <div className="lg:col-span-1">
             <div className="glass rounded-2xl p-6 space-y-4 sticky top-28">
-              <h2 className="text-lg font-display text-white mb-4">Récapitulatif</h2>
+              <h2 className="text-lg font-display text-dp-ink mb-4">Récapitulatif</h2>
 
               <div>
-                <label className="text-xs text-white/40 mb-2 block uppercase tracking-wider">
+                <label className="text-xs text-dp-ink/40 mb-2 block uppercase tracking-wider">
                   Pays de livraison
                 </label>
                 <select
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
-                  className="w-full rounded-lg border border-white/10 bg-dp-bg px-4 py-2.5 text-sm text-white focus:border-dp-gold/50 focus:outline-none"
+                  className="w-full rounded-lg border border-dp-gold/15 bg-dp-bg px-4 py-2.5 text-sm text-dp-ink focus:border-dp-gold/50 focus:outline-none"
                 >
                   {EU_COUNTRIES.map((c) => (
                     <option key={c.code} value={c.code}>{c.name}</option>
@@ -171,18 +171,18 @@ export default function CartPage() {
                 </select>
               </div>
 
-              <div className="space-y-2 text-sm border-t border-white/5 pt-4">
-                <div className="flex justify-between text-white/50">
+              <div className="space-y-2 text-sm border-t border-dp-gold/8 pt-4">
+                <div className="flex justify-between text-dp-ink/50">
                   <span>Sous-total</span>
                   <span>{formatPrice(subtotal)}</span>
                 </div>
-                <div className="flex justify-between text-white/50">
+                <div className="flex justify-between text-dp-ink/50">
                   <span>Livraison</span>
                   <span>{shippingCost === 0 ? 'Offerte ✨' : formatPrice(shippingCost)}</span>
                 </div>
               </div>
 
-              <div className="flex justify-between text-lg font-semibold text-white border-t border-white/5 pt-4">
+              <div className="flex justify-between text-lg font-semibold text-dp-ink border-t border-dp-gold/8 pt-4">
                 <span>Total</span>
                 <span>{formatPrice(total)}</span>
               </div>
@@ -191,7 +191,7 @@ export default function CartPage() {
                 {loading ? 'Redirection...' : 'Commander'}
               </NeonButton>
 
-              <p className="text-center text-xs text-white/30">
+              <p className="text-center text-xs text-dp-ink/30">
                 Paiement sécurisé via Stripe
               </p>
             </div>

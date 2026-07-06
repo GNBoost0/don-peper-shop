@@ -40,12 +40,12 @@ export default function HomePage() {
             transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="text-center"
           >
-            <p className="text-xs md:text-sm tracking-[0.5em] text-dp-gold/60 uppercase mb-4">
+            <p className="text-xs md:text-sm tracking-[0.5em] text-dp-gold-dark/70 uppercase mb-4">
               Artisanal · Premium · Infusé
             </p>
             <h1
-              className="text-6xl md:text-8xl lg:text-9xl font-display tracking-[0.1em] bg-gradient-to-r from-dp-gold via-dp-gold-light to-dp-gold bg-clip-text text-transparent"
-              style={{ filter: 'drop-shadow(0 0 40px rgba(212,165,116,0.3))' }}
+              className="text-6xl md:text-8xl lg:text-9xl font-display tracking-[0.1em] bg-gradient-to-r from-dp-gold-dark via-dp-gold to-dp-gold-dark bg-clip-text text-transparent"
+              style={{ filter: 'drop-shadow(0 2px 20px rgba(192,140,90,0.2))' }}
             >
               DON PEPER
             </h1>
@@ -54,7 +54,7 @@ export default function HomePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 1 }}
-              className="mt-6 text-lg md:text-xl text-white/70 font-light tracking-wide"
+              className="mt-6 text-lg md:text-xl text-dp-ink/70 font-light tracking-wide"
             >
               Rhum infusé artisanal · Ardennes · depuis 10 ans
             </motion.p>
@@ -72,7 +72,7 @@ export default function HomePage() {
               </NeonButton>
             </Link>
             <Link href="/a-propos">
-              <button className="rounded-xl border border-white/20 px-8 py-3.5 font-semibold text-white/80 hover:text-white hover:border-white/40 transition-all w-full sm:w-auto">
+              <button className="rounded-xl border border-dp-ink/20 px-8 py-3.5 font-semibold text-dp-ink hover:border-dp-gold/40 hover:bg-dp-surface/50 transition-all w-full sm:w-auto">
                 Notre Histoire
               </button>
             </Link>
@@ -89,8 +89,8 @@ export default function HomePage() {
             transition={{ duration: 2, repeat: Infinity }}
             className="flex flex-col items-center gap-2"
           >
-            <span className="text-xs text-white/30 tracking-widest uppercase">Scroll</span>
-            <svg className="h-5 w-5 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <span className="text-xs text-dp-ink/30 tracking-widest uppercase">Scroll</span>
+            <svg className="h-5 w-5 text-dp-ink/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
             </svg>
           </motion.div>
@@ -108,10 +108,10 @@ export default function HomePage() {
             className="text-center mb-16"
           >
             <p className="text-xs tracking-[0.4em] text-dp-gold/50 uppercase mb-3">Nos Saveurs</p>
-            <h2 className="text-4xl md:text-5xl font-display text-white">
+            <h2 className="text-4xl md:text-5xl font-display text-dp-ink">
               Une Palette de Goûts
             </h2>
-            <p className="mt-4 text-white/40 max-w-2xl mx-auto">
+            <p className="mt-4 text-dp-ink/40 max-w-2xl mx-auto">
               Chaque rhum est une création unique, infusée avec des fruits soigneusement sélectionnés.
             </p>
           </motion.div>
@@ -127,7 +127,7 @@ export default function HomePage() {
               >
                 <Link href={`/produit/${product.slug}`}>
                   <div
-                    className="group relative overflow-hidden rounded-2xl border border-white/10 p-6 text-center transition-all hover:border-white/20 hover:shadow-2xl h-full"
+                    className="group relative overflow-hidden rounded-2xl border border-dp-gold/15 p-6 text-center transition-all hover:border-dp-gold/30 hover:shadow-xl bg-dp-surface/70 h-full"
                     style={{
                       background: `linear-gradient(135deg, ${product.flavor.glow}, transparent)`,
                     }}
@@ -141,7 +141,7 @@ export default function HomePage() {
                     >
                       {product.flavor.name}
                     </h3>
-                    <p className="text-xs text-white/30 mt-1">Dès {product.formats[0].price}€</p>
+                    <p className="text-xs text-dp-ink/30 mt-1">Dès {product.formats[0].price}€</p>
 
                     <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
@@ -178,19 +178,19 @@ export default function HomePage() {
             <div className="flex justify-center gap-8 md:gap-16 flex-wrap">
               <div>
                 <div className="text-3xl font-display text-dp-gold">100%</div>
-                <p className="text-xs text-white/40 mt-1 tracking-wider uppercase">Naturel</p>
+                <p className="text-xs text-dp-ink/40 mt-1 tracking-wider uppercase">Naturel</p>
               </div>
               <div>
                 <div className="text-3xl font-display text-dp-gold">3 mois</div>
-                <p className="text-xs text-white/40 mt-1 tracking-wider uppercase">Infusion</p>
+                <p className="text-xs text-dp-ink/40 mt-1 tracking-wider uppercase">Infusion</p>
               </div>
               <div>
                 <div className="text-3xl font-display text-dp-gold">8</div>
-                <p className="text-xs text-white/40 mt-1 tracking-wider uppercase">Saveurs</p>
+                <p className="text-xs text-dp-ink/40 mt-1 tracking-wider uppercase">Saveurs</p>
               </div>
               <div>
                 <div className="text-3xl font-display text-dp-gold">0</div>
-                <p className="text-xs text-white/40 mt-1 tracking-wider uppercase">Colorants</p>
+                <p className="text-xs text-dp-ink/40 mt-1 tracking-wider uppercase">Colorants</p>
               </div>
             </div>
           </motion.div>
