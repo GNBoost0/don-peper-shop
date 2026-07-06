@@ -54,9 +54,9 @@ export default function HomePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 1 }}
-              className="mt-6 text-lg md:text-xl text-white/60 font-light tracking-wide"
+              className="mt-6 text-lg md:text-xl text-white/70 font-light tracking-wide"
             >
-              L'Art du Rhum Infusé
+              Rhum infusé artisanal · Ardennes · depuis 10 ans
             </motion.p>
           </motion.div>
 
